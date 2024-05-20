@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_fSL2ABwJEe2LY7Q5ZCUmEA">
+  <modelElement href="GameLluvia-core.uml#_f2eO0BwJEe2LY7Q5ZCUmEA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gQ9LYBwJEe2LY7Q5ZCUmEA" source="_gQ_AkBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAOAsRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gQ9LYRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAOnwBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gQ9LYhwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gQ9LYxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAOAshwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ9LZBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ9LZRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gQ9LZhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="bucket" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_bWgBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ9LZxwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ9LaBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gQ-ZgBwJEe2LY7Q5ZCUmEA" source="_gQ_AkBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAPO0BwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gQ-ZgRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAP14BwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gQ-ZghwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gQ-ZgxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAPO0RwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ-ZhBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ-ZhRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gQ-ZhhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="bucketImage" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_dLsBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ-ZhxwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ-ZiBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gSHpABwJEe2LY7Q5ZCUmEA" sourceAnchor="145.0,0.0" targetAnchor="480.0,110.0" target="_gQ_AkBwJEe2LY7Q5ZCUmEA" source="_gSUdWRwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f__XMBwJEe2LY7Q5ZCUmEA"/>
+    <bendpoints xmi:id="_ggomIBwJEe2LY7Q5ZCUmEA" sourceY="-165" targetX="264"/>
+    <stereotypes xmi:id="_gSKFQhwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_f__-QBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gSJeMRwJEe2LY7Q5ZCUmEA" text="">
+      <visualProperties xmi:id="_ggrCYBwJEe2LY7Q5ZCUmEA" position="-26.66018192443562,-9.254014159149506"/>
+    </nameVisual>
+    <sourceRole xmi:id="_gSKFQBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_f__XMRwJEe2LY7Q5ZCUmEA"/>
+      <visualProperties xmi:id="_ggqbUBwJEe2LY7Q5ZCUmEA" position="-17.128621645155476,-75.34911770975867"/>
+      <visibility xmi:id="_gSOWsRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSOWsBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gSKFQRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="tarro" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-m3IRwJEe2LY7Q5ZCUmEA"/>
+      <visualProperties xmi:id="_ggsQgBwJEe2LY7Q5ZCUmEA" position="227.78318120003894,-150.68636455523176"/>
+      <visibility xmi:id="_gSOWsxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSOWshwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gSJeMBwJEe2LY7Q5ZCUmEA" source="_gSUdWRwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f_7s0BwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gSNvohwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_f_868BwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gSNIkBwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gSNvoBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_f_7s0RwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSO9whwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSO9wRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gSNvoRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="camera" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-YNoBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSPk0RwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSPk0BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gSSBEBwJEe2LY7Q5ZCUmEA" source="_gSUdWRwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f_868RwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gSSBERwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_f_-JEBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gSSBEhwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gSSBExwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_f_868hwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSSBFBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSSBFRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gSSBFhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="batch" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-ap4BwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSSBFxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSSBGBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gSTPMBwJEe2LY7Q5ZCUmEA" source="_gSUdWRwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f_-JERwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gSTPMRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_f_-wIBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gSTPMhwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gSTPMxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_f_-JEhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSTPNBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSTPNRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gSTPNhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="font" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-b4ARwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gSTPNxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSTPOBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gSUdUBwJEe2LY7Q5ZCUmEA" sourceAnchor="175.0,0.0" targetAnchor="0.0,166.0" target="_gS_ywBwJEe2LY7Q5ZCUmEA" source="_gSUdWRwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f__-QRwJEe2LY7Q5ZCUmEA"/>
+    <bendpoints xmi:id="_ggp0QBwJEe2LY7Q5ZCUmEA" sourceY="-221" targetX="-558"/>
+    <stereotypes xmi:id="_gSUdURwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAAlUBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gSUdUhwJEe2LY7Q5ZCUmEA" text="">
+      <visualProperties xmi:id="_ggv64BwJEe2LY7Q5ZCUmEA" position="-27.841293500508982,48.46600402039215"/>
+    </nameVisual>
+    <sourceRole xmi:id="_gSUdUxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_f__-QhwJEe2LY7Q5ZCUmEA"/>
+      <visualProperties xmi:id="_ggteoBwJEe2LY7Q5ZCUmEA" position="-17.613610239102513,-88.70891484817798"/>
+      <visibility xmi:id="_gSUdVBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSUdVRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gSUdVhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="lluvia" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-sWsRwJEe2LY7Q5ZCUmEA"/>
+      <visualProperties xmi:id="_ggwh8BwJEe2LY7Q5ZCUmEA" position="-595.6136102391026,-68.06859143006909"/>
+      <visibility xmi:id="_gSUdVxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdWBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gS2o0BwJEe2LY7Q5ZCUmEA" source="_gS_ywBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAK9YRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gS6TMBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAMLgBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gS5sIBwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gS5sIRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAK9YhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS66QRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS66QBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gS5sIhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="bucketImage" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_EKIBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS66QxwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS66QhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gS8vcBwJEe2LY7Q5ZCUmEA" source="_gS_ywBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAJvQRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gS8vcRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAK9YBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gS8vchwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gS8vcxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAJvQhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS8vdBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS8vdRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gS8vdhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="raindrops" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_BG0BwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS8vdxwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS8veBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gS99kBwJEe2LY7Q5ZCUmEA" source="_gS_ywBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAMLgRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gS99kRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAMykBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gS99khwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gS99kxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAMLghwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS99lBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS99lRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gS99lhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="dropSound" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_ExMRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS99lxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS99mBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gS_LsBwJEe2LY7Q5ZCUmEA" source="_gS_ywBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAMykRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gS_LsRwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAOAsBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gS_LshwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gS_LsxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAMykhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_LtBwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_LtRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gS_LthwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="rainMusic" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f_F_URwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_LtxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS_LuBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTRfkBwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gABMYBwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTXmMBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gABzcBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTW_IBwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTW_IRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gABMYRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTbQkRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTbQkBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTW_IhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="dropImage" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-wBEBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTbQkxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTbQkhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTSGoBwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gACagBwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTXmNBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gADBkBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTXmMRwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTXmMhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gACagRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTb3ohwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTb3oRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTXmMxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="bucketImage" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-x2QBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTb3pBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTb3oxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTSGoRwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gADBkRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTYNQhwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAEPsBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTXmNRwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTYNQBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gADBkhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTceshwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTcesRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTYNQRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="dropSound" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-ydURwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTcetBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTcesxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTSGohwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAEPsRwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTY0UBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAE2wBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTYNQxwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTYNRBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAEPshwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTdFwhwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTdFwRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTYNRRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="rainMusic" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-zrcRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTdFxBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTdFwxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTStsBwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAFd0BwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTY0VBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAGE4BwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTY0URwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTY0UhwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAFd0RwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTds0hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTds0RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTY0UxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="camera" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-1goBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTds1BwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTds0xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTStsRwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAGE4RwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTZbYhwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAHTABwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTY0VRwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTZbYBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAGE4hwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTeT4hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTeT4RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTZbYRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="batch" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-2uwRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTeT5BwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTeT4xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTStshwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAHTARwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTaCcBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAH6EBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTZbYxwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTZbZBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAHTAhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTe68hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTe68RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTZbZRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="bucket" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-384RwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTe69BwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTe68xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTStsxwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAH6ERwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTaCdBwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAIhIBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTaCcRwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTaCchwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAH6EhwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTfiAhwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTfiARwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTaCcxwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="raindrops" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f-6ZIRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTfiBBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTfiAxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gTTUwBwJEe2LY7Q5ZCUmEA" source="_gTmPsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_gAJIMBwJEe2LY7Q5ZCUmEA"/>
+    <stereotypes xmi:id="_gTapghwJEe2LY7Q5ZCUmEA" name="Reference">
+      <modelElement href="GameLluvia-core.uml#_gAJvQBwJEe2LY7Q5ZCUmEA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_gTaCdRwJEe2LY7Q5ZCUmEA" text=""/>
+    <sourceRole xmi:id="_gTapgBwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="">
+      <modelElement href="GameLluvia-core.uml#_gAJIMRwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTgJExwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTgJEhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gTapgRwJEe2LY7Q5ZCUmEA" aggregationKind="NONE" name="font" navigable="true">
+      <modelElement href="GameLluvia-core.uml#_f--DgBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTgwIRwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTgwIBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gQ_AkBwJEe2LY7Q5ZCUmEA" name="Tarro" associationsIn="_gSHpABwJEe2LY7Q5ZCUmEA" associationsOut="_gQ9LYBwJEe2LY7Q5ZCUmEA _gQ-ZgBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+    <visualProperties xmi:id="_gQ_AkRwJEe2LY7Q5ZCUmEA" position="26.0,27.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gQ_AkhwJEe2LY7Q5ZCUmEA" label="+"/>
+    <attributes xmi:id="_gQ_AkxwJEe2LY7Q5ZCUmEA" name="bucket">
+      <modelElement href="GameLluvia-core.uml#_f_bWgBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gQ_AlBwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_ckoBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gQ_AlRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_AlhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gQ_AlxwJEe2LY7Q5ZCUmEA" name="Rectangle">
+        <modelElement href="GameLluvia-core.uml#_f9KssRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gQ_AmBwJEe2LY7Q5ZCUmEA" name="bucketImage">
+      <modelElement href="GameLluvia-core.uml#_f_dLsBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gQ_AmRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_eZ0BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gQ_AmhwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_AmxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gQ_AnBwJEe2LY7Q5ZCUmEA" name="Texture">
+        <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gQ_AnRwJEe2LY7Q5ZCUmEA" name="crear">
+      <modelElement href="GameLluvia-core.uml#_f4eZ8BwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ_AnhwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_AnxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gQ_AoBwJEe2LY7Q5ZCUmEA" name="destruir">
+      <modelElement href="GameLluvia-core.uml#_f4fBABwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ_AoRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_AohwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gQ_AoxwJEe2LY7Q5ZCUmEA" name="Tarro">
+      <modelElement href="GameLluvia-core.uml#_f-UjQBwJEe2LY7Q5ZCUmEA"/>
+      <keywords xmi:id="_gQ_ApBwJEe2LY7Q5ZCUmEA" keyword="create"/>
+      <visibility xmi:id="_gQ_ApRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_AphwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gQ_ApxwJEe2LY7Q5ZCUmEA">
+        <modelElement href="GameLluvia-core.uml#_f-VKURwJEe2LY7Q5ZCUmEA"/>
+        <type xmi:id="_gQ_AqBwJEe2LY7Q5ZCUmEA" name="Tarro">
+          <modelElement href="GameLluvia-core.uml#_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gQ_AqRwJEe2LY7Q5ZCUmEA" name="tex">
+        <modelElement href="GameLluvia-core.uml#_f-UjQRwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gQ_AqhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gQ_AqxwJEe2LY7Q5ZCUmEA" name="Texture">
+          <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gQ_ArBwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento">
+      <modelElement href="GameLluvia-core.uml#_f-VxYBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gQ_ArRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gQ_ArhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_gQ_ArxwJEe2LY7Q5ZCUmEA" name="camera">
+        <modelElement href="GameLluvia-core.uml#_f-VxYRwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gQ_AsBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gQ_AsRwJEe2LY7Q5ZCUmEA" name="OrthographicCamera">
+          <modelElement href="GameLluvia-core.uml#_f9EmERwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gSUdWRwJEe2LY7Q5ZCUmEA" name="GameLluvia" associationsOut="_gSHpABwJEe2LY7Q5ZCUmEA _gSJeMBwJEe2LY7Q5ZCUmEA _gSSBEBwJEe2LY7Q5ZCUmEA _gSTPMBwJEe2LY7Q5ZCUmEA _gSUdUBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f3VKcBwJEe2LY7Q5ZCUmEA"/>
+    <visualProperties xmi:id="_gSUdWhwJEe2LY7Q5ZCUmEA" position="625.0,302.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gSUdWxwJEe2LY7Q5ZCUmEA" label="+"/>
+    <attributes xmi:id="_gSUdXBwJEe2LY7Q5ZCUmEA" name="camera">
+      <modelElement href="GameLluvia-core.uml#_f-YNoBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdXRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-ZbwBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdXhwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdXxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUdYBwJEe2LY7Q5ZCUmEA" name="OrthographicCamera">
+        <modelElement href="GameLluvia-core.uml#_f9EmERwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gSUdYRwJEe2LY7Q5ZCUmEA" name="batch">
+      <modelElement href="GameLluvia-core.uml#_f-ap4BwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdYhwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-b4ABwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdYxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdZBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUdZRwJEe2LY7Q5ZCUmEA" name="SpriteBatch">
+        <modelElement href="GameLluvia-core.uml#_f9JekRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gSUdZhwJEe2LY7Q5ZCUmEA" name="font">
+      <modelElement href="GameLluvia-core.uml#_f-b4ARwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdZxwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-cfEBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdaBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdaRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUdahwJEe2LY7Q5ZCUmEA" name="BitmapFont">
+        <modelElement href="GameLluvia-core.uml#_f9HpYRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gSUdaxwJEe2LY7Q5ZCUmEA" name="contadorGotas">
+      <modelElement href="GameLluvia-core.uml#_f-dGIBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdbBwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-m3IBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdbRwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdbhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUdbxwJEe2LY7Q5ZCUmEA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gSUdcBwJEe2LY7Q5ZCUmEA" name="tarro">
+      <modelElement href="GameLluvia-core.uml#_f-m3IRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdcRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-sWsBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdchwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdcxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUddBwJEe2LY7Q5ZCUmEA" name="Tarro">
+        <modelElement href="GameLluvia-core.uml#_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gSUddRwJEe2LY7Q5ZCUmEA" name="lluvia">
+      <modelElement href="GameLluvia-core.uml#_f-sWsRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUddhwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-tk0BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUddxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gSUdeBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gSUdeRwJEe2LY7Q5ZCUmEA" name="Lluvia">
+        <modelElement href="GameLluvia-core.uml#_f4QXgBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gSUdehwJEe2LY7Q5ZCUmEA" name="create">
+      <modelElement href="GameLluvia-core.uml#_f3qhoBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdexwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f3sW0BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gSUdfBwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f3tk8BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdfRwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSUdfhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gSUdfxwJEe2LY7Q5ZCUmEA" name="render">
+      <modelElement href="GameLluvia-core.uml#_f3uMARwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdgBwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f3uzEBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gSUdgRwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f3vaIBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdghwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSUdgxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gSUdhBwJEe2LY7Q5ZCUmEA" name="dispose">
+      <modelElement href="GameLluvia-core.uml#_f3woQBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gSUdhRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f3xPUBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gSUdhhwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f3x2YBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gSUdhxwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gSUdiBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gS_ywBwJEe2LY7Q5ZCUmEA" name="Lluvia" associationsIn="_gSUdUBwJEe2LY7Q5ZCUmEA" associationsOut="_gS2o0BwJEe2LY7Q5ZCUmEA _gS8vcBwJEe2LY7Q5ZCUmEA _gS99kBwJEe2LY7Q5ZCUmEA _gS_LsBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f4QXgBwJEe2LY7Q5ZCUmEA"/>
+    <visualProperties xmi:id="_gS_ywRwJEe2LY7Q5ZCUmEA" position="1358.0,-85.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gS_ywhwJEe2LY7Q5ZCUmEA" label="+"/>
+    <attributes xmi:id="_gS_ywxwJEe2LY7Q5ZCUmEA" name="raindrops">
+      <modelElement href="GameLluvia-core.uml#_f_BG0BwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gS_yxBwJEe2LY7Q5ZCUmEA" name="Generics">
+        <modelElement href="GameLluvia-core.uml#_f_Bt4BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gS_yxRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_CU8BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gS_yxhwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_yxxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gS_yyBwJEe2LY7Q5ZCUmEA" name="Array">
+        <modelElement href="GameLluvia-core.uml#_f9dAkRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gS_yyRwJEe2LY7Q5ZCUmEA" name="lastDropTime">
+      <modelElement href="GameLluvia-core.uml#_f_C8ABwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gS_yyhwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_DjEBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gS_yyxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS_yzBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gS_yzRwJEe2LY7Q5ZCUmEA" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gS_yzhwJEe2LY7Q5ZCUmEA" name="bucketImage">
+      <modelElement href="GameLluvia-core.uml#_f_EKIBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gS_yzxwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_ExMBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gS_y0BwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_y0RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gS_y0hwJEe2LY7Q5ZCUmEA" name="Texture">
+        <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gS_y0xwJEe2LY7Q5ZCUmEA" name="dropSound">
+      <modelElement href="GameLluvia-core.uml#_f_ExMRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gS_y1BwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_F_UBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gS_y1RwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS_y1hwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gS_y1xwJEe2LY7Q5ZCUmEA" name="Sound">
+        <modelElement href="GameLluvia-core.uml#_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gS_y2BwJEe2LY7Q5ZCUmEA" name="rainMusic">
+      <modelElement href="GameLluvia-core.uml#_f_F_URwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gS_y2RwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f_avcBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gS_y2hwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS_y2xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gS_y3BwJEe2LY7Q5ZCUmEA" name="Music">
+        <modelElement href="GameLluvia-core.uml#_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gS_y3RwJEe2LY7Q5ZCUmEA" name="crear">
+      <modelElement href="GameLluvia-core.uml#_f4UB4BwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_y3hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_y3xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gS_y4BwJEe2LY7Q5ZCUmEA" name="spawnRaindrop">
+      <modelElement href="GameLluvia-core.uml#_f4Uo8BwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_y4RwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gS_y4hwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gS_y4xwJEe2LY7Q5ZCUmEA" name="destruir">
+      <modelElement href="GameLluvia-core.uml#_f4V3EBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_y5BwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_y5RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gS_y5hwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento">
+      <modelElement href="GameLluvia-core.uml#_f9yXwBwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gS_y5xwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_y6BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gS_y6RwJEe2LY7Q5ZCUmEA">
+        <modelElement href="GameLluvia-core.uml#_f900ARwJEe2LY7Q5ZCUmEA"/>
+        <type xmi:id="_gS_y6hwJEe2LY7Q5ZCUmEA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gS_y6xwJEe2LY7Q5ZCUmEA" name="tt">
+        <modelElement href="GameLluvia-core.uml#_f90M8BwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gS_y7BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gS_y7RwJEe2LY7Q5ZCUmEA" name="Tarro">
+          <modelElement href="GameLluvia-core.uml#_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gS_y7hwJEe2LY7Q5ZCUmEA" name="contadorGotas">
+        <modelElement href="GameLluvia-core.uml#_f900ABwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gS_y7xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gS_y8BwJEe2LY7Q5ZCUmEA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gS_y8RwJEe2LY7Q5ZCUmEA" name="Lluvia">
+      <modelElement href="GameLluvia-core.uml#_f-PDsBwJEe2LY7Q5ZCUmEA"/>
+      <keywords xmi:id="_gS_y8hwJEe2LY7Q5ZCUmEA" keyword="create"/>
+      <visibility xmi:id="_gS_y8xwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gS_y9BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gS_y9RwJEe2LY7Q5ZCUmEA">
+        <modelElement href="GameLluvia-core.uml#_f-SuERwJEe2LY7Q5ZCUmEA"/>
+        <type xmi:id="_gS_y9hwJEe2LY7Q5ZCUmEA" name="Lluvia">
+          <modelElement href="GameLluvia-core.uml#_f4QXgBwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gS_y9xwJEe2LY7Q5ZCUmEA" name="tex">
+        <modelElement href="GameLluvia-core.uml#_f-PDsRwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gS_y-BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gS_y-RwJEe2LY7Q5ZCUmEA" name="Texture">
+          <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gS_y-hwJEe2LY7Q5ZCUmEA" name="ss">
+        <modelElement href="GameLluvia-core.uml#_f-Rf8BwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gS_y-xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gS_y_BwJEe2LY7Q5ZCUmEA" name="Sound">
+          <modelElement href="GameLluvia-core.uml#_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gS_y_RwJEe2LY7Q5ZCUmEA" name="mm">
+        <modelElement href="GameLluvia-core.uml#_f-SHABwJEe2LY7Q5ZCUmEA"/>
+        <cardinality xmi:id="_gS_y_hwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+        <type xmi:id="_gS_y_xwJEe2LY7Q5ZCUmEA" name="Music">
+          <modelElement href="GameLluvia-core.uml#_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gTmPsBwJEe2LY7Q5ZCUmEA" name="GameLluvia1" associationsOut="_gTRfkBwJEe2LY7Q5ZCUmEA _gTSGoBwJEe2LY7Q5ZCUmEA _gTSGoRwJEe2LY7Q5ZCUmEA _gTSGohwJEe2LY7Q5ZCUmEA _gTStsBwJEe2LY7Q5ZCUmEA _gTStsRwJEe2LY7Q5ZCUmEA _gTStshwJEe2LY7Q5ZCUmEA _gTStsxwJEe2LY7Q5ZCUmEA _gTTUwBwJEe2LY7Q5ZCUmEA">
+    <modelElement href="GameLluvia-core.uml#_f34kEBwJEe2LY7Q5ZCUmEA"/>
+    <visualProperties xmi:id="_gTmPsRwJEe2LY7Q5ZCUmEA" position="976.0,101.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gTmPshwJEe2LY7Q5ZCUmEA" label="+"/>
+    <attributes xmi:id="_gTmPsxwJEe2LY7Q5ZCUmEA" name="dropImage">
+      <modelElement href="GameLluvia-core.uml#_f-wBEBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPtBwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-xPMBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPtRwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPthwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmPtxwJEe2LY7Q5ZCUmEA" name="Texture">
+        <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmPuBwJEe2LY7Q5ZCUmEA" name="bucketImage">
+      <modelElement href="GameLluvia-core.uml#_f-x2QBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPuRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-ydUBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPuhwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPuxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmPvBwJEe2LY7Q5ZCUmEA" name="Texture">
+        <modelElement href="GameLluvia-core.uml#_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmPvRwJEe2LY7Q5ZCUmEA" name="dropSound">
+      <modelElement href="GameLluvia-core.uml#_f-ydURwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPvhwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-zrcBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPvxwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPwBwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmPwRwJEe2LY7Q5ZCUmEA" name="Sound">
+        <modelElement href="GameLluvia-core.uml#_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmPwhwJEe2LY7Q5ZCUmEA" name="rainMusic">
+      <modelElement href="GameLluvia-core.uml#_f-zrcRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPwxwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-05kBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPxBwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPxRwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmPxhwJEe2LY7Q5ZCUmEA" name="Music">
+        <modelElement href="GameLluvia-core.uml#_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmPxxwJEe2LY7Q5ZCUmEA" name="camera">
+      <modelElement href="GameLluvia-core.uml#_f-1goBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPyBwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-2uwBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPyRwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPyhwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmPyxwJEe2LY7Q5ZCUmEA" name="OrthographicCamera">
+        <modelElement href="GameLluvia-core.uml#_f9EmERwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmPzBwJEe2LY7Q5ZCUmEA" name="batch">
+      <modelElement href="GameLluvia-core.uml#_f-2uwRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmPzRwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-384BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmPzhwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmPzxwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP0BwJEe2LY7Q5ZCUmEA" name="SpriteBatch">
+        <modelElement href="GameLluvia-core.uml#_f9JekRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmP0RwJEe2LY7Q5ZCUmEA" name="bucket">
+      <modelElement href="GameLluvia-core.uml#_f-384RwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP0hwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-6ZIBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP0xwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP1BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP1RwJEe2LY7Q5ZCUmEA" name="Rectangle">
+        <modelElement href="GameLluvia-core.uml#_f9KssRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmP1hwJEe2LY7Q5ZCUmEA" name="raindrops">
+      <modelElement href="GameLluvia-core.uml#_f-6ZIRwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP1xwJEe2LY7Q5ZCUmEA" name="Generics">
+        <modelElement href="GameLluvia-core.uml#_f-7nQBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gTmP2BwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-8OUBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP2RwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP2hwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP2xwJEe2LY7Q5ZCUmEA" name="Array">
+        <modelElement href="GameLluvia-core.uml#_f9dAkRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmP3BwJEe2LY7Q5ZCUmEA" name="lastDropTime">
+      <modelElement href="GameLluvia-core.uml#_f-81YBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP3RwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-9ccBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP3hwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP3xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP4BwJEe2LY7Q5ZCUmEA" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmP4RwJEe2LY7Q5ZCUmEA" name="font">
+      <modelElement href="GameLluvia-core.uml#_f--DgBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP4hwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f--qkBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP4xwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP5BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP5RwJEe2LY7Q5ZCUmEA" name="BitmapFont">
+        <modelElement href="GameLluvia-core.uml#_f9HpYRwJEe2LY7Q5ZCUmEA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gTmP5hwJEe2LY7Q5ZCUmEA" name="contadorGotas">
+      <modelElement href="GameLluvia-core.uml#_f-_RoBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP5xwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f-_4sBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP6BwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP6RwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+      <type xmi:id="_gTmP6hwJEe2LY7Q5ZCUmEA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gTmP6xwJEe2LY7Q5ZCUmEA" name="create">
+      <modelElement href="GameLluvia-core.uml#_f381gBwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP7BwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f39ckBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gTmP7RwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f3-DoBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP7hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTmP7xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gTmP8BwJEe2LY7Q5ZCUmEA" name="spawnRaindrop">
+      <modelElement href="GameLluvia-core.uml#_f3-DohwJEe2LY7Q5ZCUmEA"/>
+      <visibility xmi:id="_gTmP8RwJEe2LY7Q5ZCUmEA" label="-"/>
+      <cardinality xmi:id="_gTmP8hwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gTmP8xwJEe2LY7Q5ZCUmEA" name="render">
+      <modelElement href="GameLluvia-core.uml#_f3_40BwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP9BwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f4Af4BwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gTmP9RwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f4BuABwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP9hwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTmP9xwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_gTmP-BwJEe2LY7Q5ZCUmEA" name="dispose">
+      <modelElement href="GameLluvia-core.uml#_f4BuAhwJEe2LY7Q5ZCUmEA"/>
+      <stereotypes xmi:id="_gTmP-RwJEe2LY7Q5ZCUmEA" name="LegacyStyledElement">
+        <modelElement href="GameLluvia-core.uml#_f4C8IBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gTmP-hwJEe2LY7Q5ZCUmEA" name="Annotations">
+        <modelElement href="GameLluvia-core.uml#_f4DjMBwJEe2LY7Q5ZCUmEA"/>
+      </stereotypes>
+      <visibility xmi:id="_gTmP-xwJEe2LY7Q5ZCUmEA" label="+"/>
+      <cardinality xmi:id="_gTmP_BwJEe2LY7Q5ZCUmEA" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

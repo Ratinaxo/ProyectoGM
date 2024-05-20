@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_fL0IQBwJEe2LY7Q5ZCUmEA" name="GameLluvia_core">
+    <eAnnotations xmi:id="_fkSSoBwJEe2LY7Q5ZCUmEA" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_fkSSoRwJEe2LY7Q5ZCUmEA" source="codegen">
+        <details xmi:id="_fkS5sBwJEe2LY7Q5ZCUmEA" key="codegenDirectory" value="/GameLluvia-core/src"/>
+        <details xmi:id="_gQbm8BwJEe2LY7Q5ZCUmEA" key="AssociatedSourceCode" value="/GameLluvia-core/src/com/mygdx/game/GameLluvia.java;857852888/1;/GameLluvia-core/src/com/mygdx/game/GameLluvia1.java;635730342/1;/GameLluvia-core/src/com/mygdx/game/Lluvia.java;72883865/1;/GameLluvia-core/src/com/mygdx/game/Tarro.java;2699575715/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_f3kbABwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_f3lpIBwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_f3mQMBwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_f3m3QBwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_f3m3QRwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_f3neUBwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_f3neURwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_f3neUhwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_f3oscBwJEe2LY7Q5ZCUmEA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_f2HpgBwJEe2LY7Q5ZCUmEA" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_f2IQkBwJEe2LY7Q5ZCUmEA" name="mygdx">
+        <packagedElement xmi:type="uml:Package" xmi:id="_f2eO0BwJEe2LY7Q5ZCUmEA" name="game">
+          <packagedElement xmi:type="uml:Class" xmi:id="_f3VKcBwJEe2LY7Q5ZCUmEA" name="GameLluvia">
+            <generalization xmi:id="_f-Hu8BwJEe2LY7Q5ZCUmEA" general="_f85m8BwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-YNoBwJEe2LY7Q5ZCUmEA" name="camera" visibility="private" type="_f9EmERwJEe2LY7Q5ZCUmEA" association="_f_7s0BwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-ap4BwJEe2LY7Q5ZCUmEA" name="batch" visibility="private" type="_f9JekRwJEe2LY7Q5ZCUmEA" association="_f_868RwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-b4ARwJEe2LY7Q5ZCUmEA" name="font" visibility="private" type="_f9HpYRwJEe2LY7Q5ZCUmEA" association="_f_-JERwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-dGIBwJEe2LY7Q5ZCUmEA" name="contadorGotas" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_f-m3IRwJEe2LY7Q5ZCUmEA" name="tarro" visibility="private" type="_f4b9sBwJEe2LY7Q5ZCUmEA" association="_f__XMBwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-sWsRwJEe2LY7Q5ZCUmEA" name="lluvia" visibility="private" type="_f4QXgBwJEe2LY7Q5ZCUmEA" association="_f__-QRwJEe2LY7Q5ZCUmEA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_qAABwJEe2LY7Q5ZCUmEA" name="create" specification="_f3qhoBwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>font = new BitmapFont(); // use libGDX's default Arial font&#xD;
+		 &#xD;
+		   // load the images for the droplet and the bucket, 64x64 pixels each 	     &#xD;
+       tarro = new Tarro(new Texture(Gdx.files.internal(&quot;bucket.png&quot;)));&#xD;
+       &#xD;
+	      // load the drop sound effect and the rain background &quot;music&quot; &#xD;
+       Texture dropImage = new Texture(Gdx.files.internal(&quot;drop.png&quot;));&#xD;
+       Sound dropSound = Gdx.audio.newSound(Gdx.files.internal(&quot;drop.wav&quot;));&#xD;
+	      Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal(&quot;rain.mp3&quot;));&#xD;
+       lluvia = new Lluvia(dropImage, dropSound, rainMusic);&#xD;
+	      &#xD;
+	      // camera&#xD;
+	      camera = new OrthographicCamera();&#xD;
+	      camera.setToOrtho(false, 800, 480);&#xD;
+	      batch = new SpriteBatch();&#xD;
+	      // creacion del tarro&#xD;
+	      tarro.crear();&#xD;
+	      &#xD;
+	      // creacion de la lluvia&#xD;
+	      lluvia.crear();&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_u4gBwJEe2LY7Q5ZCUmEA" name="render" specification="_f3uMARwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>ScreenUtils.clear(0, 0, 0.2f, 1);&#xD;
+		camera.update();&#xD;
+		&#xD;
+		// movimiento desde mouse/touch&#xD;
+     tarro.actualizarMovimiento(camera);&#xD;
+     &#xD;
+		// caida de la lluvia &#xD;
+		  contadorGotas=lluvia.actualizarMovimiento(tarro, contadorGotas);&#xD;
+		   &#xD;
+		batch.setProjectionMatrix(camera.combined);&#xD;
+		batch.begin();&#xD;
+		font.draw(batch, &quot;Gotas totales: &quot; + contadorGotas, 0, 480);&#xD;
+		batch.draw(tarro.bucketImage, tarro.bucket.x, tarro.bucket.y);&#xD;
+		  for(Rectangle raindrop: lluvia.raindrops) {&#xD;
+		      batch.draw(lluvia.bucketImage, raindrop.x, raindrop.y);   &#xD;
+		   }&#xD;
+		batch.end();	&#xD;
+		&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_vfkBwJEe2LY7Q5ZCUmEA" name="dispose" specification="_f3woQBwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>tarro.hashCode();&#xD;
+       lluvia.destruir();&#xD;
+	      batch.dispose();&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_f3qhoBwJEe2LY7Q5ZCUmEA" name="create" method="_f_qAABwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f3uMARwJEe2LY7Q5ZCUmEA" name="render" method="_f_u4gBwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f3woQBwJEe2LY7Q5ZCUmEA" name="dispose" method="_f_vfkBwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_f34kEBwJEe2LY7Q5ZCUmEA" name="GameLluvia1">
+            <generalization xmi:id="_f-LZUBwJEe2LY7Q5ZCUmEA" general="_f85m8BwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-wBEBwJEe2LY7Q5ZCUmEA" name="dropImage" visibility="private" type="_f9GbQBwJEe2LY7Q5ZCUmEA" association="_gABMYBwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-x2QBwJEe2LY7Q5ZCUmEA" name="bucketImage" visibility="private" type="_f9GbQBwJEe2LY7Q5ZCUmEA" association="_gACagBwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-ydURwJEe2LY7Q5ZCUmEA" name="dropSound" visibility="private" type="_f9Cw4RwJEe2LY7Q5ZCUmEA" association="_gADBkRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-zrcRwJEe2LY7Q5ZCUmEA" name="rainMusic" visibility="private" type="_f8_tkRwJEe2LY7Q5ZCUmEA" association="_gAEPsRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-1goBwJEe2LY7Q5ZCUmEA" name="camera" visibility="private" type="_f9EmERwJEe2LY7Q5ZCUmEA" association="_gAFd0BwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-2uwRwJEe2LY7Q5ZCUmEA" name="batch" visibility="private" type="_f9JekRwJEe2LY7Q5ZCUmEA" association="_gAGE4RwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-384RwJEe2LY7Q5ZCUmEA" name="bucket" visibility="private" type="_f9KssRwJEe2LY7Q5ZCUmEA" association="_gAHTARwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-6ZIRwJEe2LY7Q5ZCUmEA" name="raindrops" visibility="private" type="_f9dAkRwJEe2LY7Q5ZCUmEA" association="_gAH6ERwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-81YBwJEe2LY7Q5ZCUmEA" name="lastDropTime" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_f--DgBwJEe2LY7Q5ZCUmEA" name="font" visibility="private" type="_f9HpYRwJEe2LY7Q5ZCUmEA" association="_gAJIMBwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f-_RoBwJEe2LY7Q5ZCUmEA" name="contadorGotas" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_wGoBwJEe2LY7Q5ZCUmEA" name="create" specification="_f381gBwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>font = new BitmapFont(); // use libGDX's default Arial font
+		 
+		   // load the images for the droplet and the bucket, 64x64 pixels each
+	      dropImage = new Texture(Gdx.files.internal(&quot;drop.png&quot;));
+	      bucketImage = new Texture(Gdx.files.internal(&quot;bucket.png&quot;));
+
+	      // load the drop sound effect and the rain background &quot;music&quot;
+	      dropSound = Gdx.audio.newSound(Gdx.files.internal(&quot;drop.wav&quot;));
+	      rainMusic = Gdx.audio.newMusic(Gdx.files.internal(&quot;rain.mp3&quot;));
+
+	      // start the playback of the background music immediately
+	      rainMusic.setLooping(true);
+	      rainMusic.play();
+	      // camera
+	      camera = new OrthographicCamera();
+	      camera.setToOrtho(false, 800, 480);
+	      batch = new SpriteBatch();
+	      // creacion del tarro
+	      bucket = new Rectangle();
+	      bucket.x = 800 / 2 - 64 / 2;
+	      bucket.y = 20;
+	      bucket.width = 64;
+	      bucket.height = 64;
+	      // creacion de la lluvia
+	      raindrops = new Array&lt;Rectangle>();
+	      spawnRaindrop();
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_wGoRwJEe2LY7Q5ZCUmEA" name="spawnRaindrop" specification="_f3-DohwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>Rectangle raindrop = new Rectangle();
+	      raindrop.x = MathUtils.random(0, 800-64);
+	      raindrop.y = 480;
+	      raindrop.width = 64;
+	      raindrop.height = 64;
+	      raindrops.add(raindrop);
+	      lastDropTime = TimeUtils.nanoTime();
+	   </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_wtsBwJEe2LY7Q5ZCUmEA" name="render" specification="_f3_40BwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>ScreenUtils.clear(0, 0, 0.2f, 1);
+		camera.update();
+		
+		// movimiento desde mouse/touch
+		   if(Gdx.input.isTouched()) {
+			      Vector3 touchPos = new Vector3();
+			      touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+			      camera.unproject(touchPos);
+			      bucket.x = touchPos.x - 64 / 2;
+		}
+		//movimiento desde teclado
+		   if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) bucket.x -= 200 * Gdx.graphics.getDeltaTime();
+		   if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();
+		   if(bucket.x &lt; 0) bucket.x = 0;
+		   if(bucket.x > 800 - 64) bucket.x = 800 - 64;
+		// caida de la lluvia 
+		   if(TimeUtils.nanoTime() - lastDropTime > 100000000) spawnRaindrop();
+		   for (Iterator&lt;Rectangle> iter = raindrops.iterator(); iter.hasNext(); ) {
+			      Rectangle raindrop = iter.next();
+			      raindrop.y -= 300 * Gdx.graphics.getDeltaTime();
+			      if(raindrop.y + 64 &lt; 0) iter.remove(); //cae al suelo
+			      if(raindrop.overlaps(bucket)) { //cae en el tarro
+			    	  contadorGotas++;
+			          dropSound.play();
+			          iter.remove();
+			       }
+			   }
+		   
+		batch.setProjectionMatrix(camera.combined);
+		batch.begin();
+		font.draw(batch, &quot;Gotas Recolectadas: &quot; + contadorGotas, 0, 480);
+		batch.draw(bucketImage, bucket.x, bucket.y);
+		  for(Rectangle raindrop: raindrops) {
+		      batch.draw(dropImage, raindrop.x, raindrop.y);
+		      
+		   }
+		batch.end();
+		
+		
+		
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_wtsRwJEe2LY7Q5ZCUmEA" name="dispose" specification="_f4BuAhwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>dropImage.dispose();
+	      bucketImage.dispose();
+	      dropSound.dispose();
+	      rainMusic.dispose();
+	      batch.dispose();
+	</body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_f381gBwJEe2LY7Q5ZCUmEA" name="create" method="_f_wGoBwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f3-DohwJEe2LY7Q5ZCUmEA" name="spawnRaindrop" visibility="private" method="_f_wGoRwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f3_40BwJEe2LY7Q5ZCUmEA" name="render" method="_f_wtsBwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f4BuAhwJEe2LY7Q5ZCUmEA" name="dispose" method="_f_wtsRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_f4QXgBwJEe2LY7Q5ZCUmEA" name="Lluvia">
+            <ownedAttribute xmi:id="_f_BG0BwJEe2LY7Q5ZCUmEA" name="raindrops" type="_f9dAkRwJEe2LY7Q5ZCUmEA" association="_gAJvQRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f_C8ABwJEe2LY7Q5ZCUmEA" name="lastDropTime" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_f_EKIBwJEe2LY7Q5ZCUmEA" name="bucketImage" type="_f9GbQBwJEe2LY7Q5ZCUmEA" association="_gAK9YRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f_ExMRwJEe2LY7Q5ZCUmEA" name="dropSound" visibility="private" type="_f9Cw4RwJEe2LY7Q5ZCUmEA" association="_gAMLgRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f_F_URwJEe2LY7Q5ZCUmEA" name="rainMusic" visibility="private" type="_f8_tkRwJEe2LY7Q5ZCUmEA" association="_gAMykRwJEe2LY7Q5ZCUmEA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_x70BwJEe2LY7Q5ZCUmEA" name="Lluvia" specification="_f-PDsBwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f_x70RwJEe2LY7Q5ZCUmEA" name="tex" type="_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f_x70hwJEe2LY7Q5ZCUmEA" name="ss" type="_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f_x70xwJEe2LY7Q5ZCUmEA" name="mm" type="_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f_x71BwJEe2LY7Q5ZCUmEA" type="_f4QXgBwJEe2LY7Q5ZCUmEA" direction="return"/>
+              <language>java</language>
+              <body>rainMusic = mm;&#xD;
+		dropSound = ss;&#xD;
+		bucketImage = tex;&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_yi4BwJEe2LY7Q5ZCUmEA" name="crear" specification="_f4UB4BwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>raindrops = new Array&lt;Rectangle>();&#xD;
+	      spawnRaindrop();&#xD;
+	      // start the playback of the background music immediately&#xD;
+	      rainMusic.setLooping(true);&#xD;
+	      rainMusic.play();&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_yi4RwJEe2LY7Q5ZCUmEA" name="spawnRaindrop" specification="_f4Uo8BwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>Rectangle raindrop = new Rectangle();&#xD;
+	      raindrop.x = MathUtils.random(0, 800-64);&#xD;
+	      raindrop.y = 480;&#xD;
+	      raindrop.width = 64;&#xD;
+	      raindrop.height = 64;&#xD;
+	      raindrops.add(raindrop);&#xD;
+	      lastDropTime = TimeUtils.nanoTime();&#xD;
+	   </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_zJ8BwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento" specification="_f9yXwBwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f_zJ8RwJEe2LY7Q5ZCUmEA" name="tt" type="_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f_zJ8hwJEe2LY7Q5ZCUmEA" name="contadorGotas">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_f_zJ8xwJEe2LY7Q5ZCUmEA" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>// caida de la lluvia &#xD;
+	   if(TimeUtils.nanoTime() - lastDropTime > 100000000) spawnRaindrop();&#xD;
+	   for (Iterator&lt;Rectangle> iter = raindrops.iterator(); iter.hasNext(); ) {&#xD;
+		      Rectangle raindrop = iter.next();&#xD;
+		      raindrop.y -= 300 * Gdx.graphics.getDeltaTime();&#xD;
+		      if(raindrop.y + 64 &lt; 0) iter.remove(); //cae al suelo&#xD;
+		      if(raindrop.overlaps(tt.bucket)) { //cae en el tarro&#xD;
+		    	  contadorGotas++;&#xD;
+		          dropSound.play();&#xD;
+		          iter.remove();&#xD;
+		       }&#xD;
+		   }&#xD;
+	   return contadorGotas;&#xD;
+	   &#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_zJ9BwJEe2LY7Q5ZCUmEA" name="destruir" specification="_f4V3EBwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>dropSound.dispose();&#xD;
+	      rainMusic.dispose();&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_f4UB4BwJEe2LY7Q5ZCUmEA" name="crear" method="_f_yi4BwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f4Uo8BwJEe2LY7Q5ZCUmEA" name="spawnRaindrop" visibility="private" method="_f_yi4RwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f4V3EBwJEe2LY7Q5ZCUmEA" name="destruir" method="_f_zJ9BwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f9yXwBwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento" method="_f_zJ8BwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f90M8BwJEe2LY7Q5ZCUmEA" name="tt" type="_f4b9sBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f900ABwJEe2LY7Q5ZCUmEA" name="contadorGotas">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_f900ARwJEe2LY7Q5ZCUmEA" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_f-PDsBwJEe2LY7Q5ZCUmEA" name="Lluvia" method="_f_x70BwJEe2LY7Q5ZCUmEA">
+              <eAnnotations xmi:id="_f-SHARwJEe2LY7Q5ZCUmEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                <details xmi:id="_f-SuEBwJEe2LY7Q5ZCUmEA" key="create"/>
+              </eAnnotations>
+              <ownedParameter xmi:id="_f-PDsRwJEe2LY7Q5ZCUmEA" name="tex" type="_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f-Rf8BwJEe2LY7Q5ZCUmEA" name="ss" type="_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f-SHABwJEe2LY7Q5ZCUmEA" name="mm" type="_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f-SuERwJEe2LY7Q5ZCUmEA" type="_f4QXgBwJEe2LY7Q5ZCUmEA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_f4b9sBwJEe2LY7Q5ZCUmEA" name="Tarro">
+            <ownedAttribute xmi:id="_f_bWgBwJEe2LY7Q5ZCUmEA" name="bucket" type="_f9KssRwJEe2LY7Q5ZCUmEA" association="_gAOAsRwJEe2LY7Q5ZCUmEA"/>
+            <ownedAttribute xmi:id="_f_dLsBwJEe2LY7Q5ZCUmEA" name="bucketImage" type="_f9GbQBwJEe2LY7Q5ZCUmEA" association="_gAPO0BwJEe2LY7Q5ZCUmEA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_zxABwJEe2LY7Q5ZCUmEA" name="Tarro" specification="_f-UjQBwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f_zxARwJEe2LY7Q5ZCUmEA" name="tex" type="_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f_zxAhwJEe2LY7Q5ZCUmEA" type="_f4b9sBwJEe2LY7Q5ZCUmEA" direction="return"/>
+              <language>java</language>
+              <body>bucketImage = tex;&#xD;
+	   </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_0YEBwJEe2LY7Q5ZCUmEA" name="crear" specification="_f4eZ8BwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>bucket = new Rectangle();&#xD;
+		      bucket.x = 800 / 2 - 64 / 2;&#xD;
+		      bucket.y = 20;&#xD;
+		      bucket.width = 64;&#xD;
+		      bucket.height = 64;&#xD;
+	   </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_0YERwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento" specification="_f-VxYBwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f_0YEhwJEe2LY7Q5ZCUmEA" name="camera" type="_f9EmERwJEe2LY7Q5ZCUmEA"/>
+              <language>java</language>
+              <body>// movimiento desde mouse/touch&#xD;
+		   if(Gdx.input.isTouched()) {&#xD;
+			      Vector3 touchPos = new Vector3();&#xD;
+			      touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);&#xD;
+			      camera.unproject(touchPos);&#xD;
+			      bucket.x = touchPos.x - 64 / 2;&#xD;
+		}&#xD;
+		//movimiento desde teclado&#xD;
+		   if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) bucket.x -= 200 * Gdx.graphics.getDeltaTime();&#xD;
+		   if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();&#xD;
+		   if(bucket.x &lt; 0) bucket.x = 0;&#xD;
+		   if(bucket.x > 800 - 64) bucket.x = 800 - 64;&#xD;
+	   </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_f_0_IBwJEe2LY7Q5ZCUmEA" name="destruir" specification="_f4fBABwJEe2LY7Q5ZCUmEA">
+              <language>java</language>
+              <body>bucketImage.dispose();&#xD;
+	   </body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_f4eZ8BwJEe2LY7Q5ZCUmEA" name="crear" method="_f_0YEBwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f4fBABwJEe2LY7Q5ZCUmEA" name="destruir" method="_f_0_IBwJEe2LY7Q5ZCUmEA"/>
+            <ownedOperation xmi:id="_f-UjQBwJEe2LY7Q5ZCUmEA" name="Tarro" method="_f_zxABwJEe2LY7Q5ZCUmEA">
+              <eAnnotations xmi:id="_f-UjQhwJEe2LY7Q5ZCUmEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                <details xmi:id="_f-VKUBwJEe2LY7Q5ZCUmEA" key="create"/>
+              </eAnnotations>
+              <ownedParameter xmi:id="_f-UjQRwJEe2LY7Q5ZCUmEA" name="tex" type="_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+              <ownedParameter xmi:id="_f-VKURwJEe2LY7Q5ZCUmEA" type="_f4b9sBwJEe2LY7Q5ZCUmEA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_f-VxYBwJEe2LY7Q5ZCUmEA" name="actualizarMovimiento" method="_f_0YERwJEe2LY7Q5ZCUmEA">
+              <ownedParameter xmi:id="_f-VxYRwJEe2LY7Q5ZCUmEA" name="camera" type="_f9EmERwJEe2LY7Q5ZCUmEA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_f_7s0BwJEe2LY7Q5ZCUmEA" name="" memberEnd="_f_7s0RwJEe2LY7Q5ZCUmEA _f-YNoBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_f_7s0RwJEe2LY7Q5ZCUmEA" name="" type="_f3VKcBwJEe2LY7Q5ZCUmEA" association="_f_7s0BwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_f_868RwJEe2LY7Q5ZCUmEA" name="" memberEnd="_f_868hwJEe2LY7Q5ZCUmEA _f-ap4BwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_f_868hwJEe2LY7Q5ZCUmEA" name="" type="_f3VKcBwJEe2LY7Q5ZCUmEA" association="_f_868RwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_f_-JERwJEe2LY7Q5ZCUmEA" name="" memberEnd="_f_-JEhwJEe2LY7Q5ZCUmEA _f-b4ARwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_f_-JEhwJEe2LY7Q5ZCUmEA" name="" type="_f3VKcBwJEe2LY7Q5ZCUmEA" association="_f_-JERwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_f__XMBwJEe2LY7Q5ZCUmEA" name="" memberEnd="_f__XMRwJEe2LY7Q5ZCUmEA _f-m3IRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_f__XMRwJEe2LY7Q5ZCUmEA" name="" type="_f3VKcBwJEe2LY7Q5ZCUmEA" association="_f__XMBwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_f__-QRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_f__-QhwJEe2LY7Q5ZCUmEA _f-sWsRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_f__-QhwJEe2LY7Q5ZCUmEA" name="" type="_f3VKcBwJEe2LY7Q5ZCUmEA" association="_f__-QRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gABMYBwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gABMYRwJEe2LY7Q5ZCUmEA _f-wBEBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gABMYRwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gABMYBwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gACagBwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gACagRwJEe2LY7Q5ZCUmEA _f-x2QBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gACagRwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gACagBwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gADBkRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gADBkhwJEe2LY7Q5ZCUmEA _f-ydURwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gADBkhwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gADBkRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAEPsRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAEPshwJEe2LY7Q5ZCUmEA _f-zrcRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAEPshwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAEPsRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAFd0BwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAFd0RwJEe2LY7Q5ZCUmEA _f-1goBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAFd0RwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAFd0BwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAGE4RwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAGE4hwJEe2LY7Q5ZCUmEA _f-2uwRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAGE4hwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAGE4RwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAHTARwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAHTAhwJEe2LY7Q5ZCUmEA _f-384RwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAHTAhwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAHTARwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAH6ERwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAH6EhwJEe2LY7Q5ZCUmEA _f-6ZIRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAH6EhwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAH6ERwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAJIMBwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAJIMRwJEe2LY7Q5ZCUmEA _f--DgBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAJIMRwJEe2LY7Q5ZCUmEA" name="" type="_f34kEBwJEe2LY7Q5ZCUmEA" association="_gAJIMBwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAJvQRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAJvQhwJEe2LY7Q5ZCUmEA _f_BG0BwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAJvQhwJEe2LY7Q5ZCUmEA" name="" type="_f4QXgBwJEe2LY7Q5ZCUmEA" association="_gAJvQRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAK9YRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAK9YhwJEe2LY7Q5ZCUmEA _f_EKIBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAK9YhwJEe2LY7Q5ZCUmEA" name="" type="_f4QXgBwJEe2LY7Q5ZCUmEA" association="_gAK9YRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAMLgRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAMLghwJEe2LY7Q5ZCUmEA _f_ExMRwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAMLghwJEe2LY7Q5ZCUmEA" name="" type="_f4QXgBwJEe2LY7Q5ZCUmEA" association="_gAMLgRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAMykRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAMykhwJEe2LY7Q5ZCUmEA _f_F_URwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAMykhwJEe2LY7Q5ZCUmEA" name="" type="_f4QXgBwJEe2LY7Q5ZCUmEA" association="_gAMykRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAOAsRwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAOAshwJEe2LY7Q5ZCUmEA _f_bWgBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAOAshwJEe2LY7Q5ZCUmEA" name="" type="_f4b9sBwJEe2LY7Q5ZCUmEA" association="_gAOAsRwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_gAPO0BwJEe2LY7Q5ZCUmEA" name="" memberEnd="_gAPO0RwJEe2LY7Q5ZCUmEA _f_dLsBwJEe2LY7Q5ZCUmEA">
+            <ownedEnd xmi:id="_gAPO0RwJEe2LY7Q5ZCUmEA" name="" type="_f4b9sBwJEe2LY7Q5ZCUmEA" association="_gAPO0BwJEe2LY7Q5ZCUmEA"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_f2PlUBwJEe2LY7Q5ZCUmEA" name="badlogic">
+        <packagedElement xmi:type="uml:Package" xmi:id="_f2PlURwJEe2LY7Q5ZCUmEA" name="gdx">
+          <packagedElement xmi:type="uml:Package" xmi:id="_f2QMYBwJEe2LY7Q5ZCUmEA" name="audio">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_f8_tkRwJEe2LY7Q5ZCUmEA" name="Music"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_f9Cw4RwJEe2LY7Q5ZCUmEA" name="Sound"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_f2QzcBwJEe2LY7Q5ZCUmEA" name="graphics">
+            <packagedElement xmi:type="uml:Package" xmi:id="_f2RagBwJEe2LY7Q5ZCUmEA" name="g2d">
+              <packagedElement xmi:type="uml:Class" xmi:id="_f9HpYRwJEe2LY7Q5ZCUmEA" name="BitmapFont"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_f9JekRwJEe2LY7Q5ZCUmEA" name="SpriteBatch"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9EmERwJEe2LY7Q5ZCUmEA" name="OrthographicCamera"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9GbQBwJEe2LY7Q5ZCUmEA" name="Texture"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_f2SBkBwJEe2LY7Q5ZCUmEA" name="math">
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9KssRwJEe2LY7Q5ZCUmEA" name="Rectangle"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9Z9QBwJEe2LY7Q5ZCUmEA" name="MathUtils"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9bLYRwJEe2LY7Q5ZCUmEA" name="Vector3"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_f2SooBwJEe2LY7Q5ZCUmEA" name="utils">
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9L60RwJEe2LY7Q5ZCUmEA" name="ScreenUtils"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9dAkRwJEe2LY7Q5ZCUmEA" name="Array"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_f9fc0BwJEe2LY7Q5ZCUmEA" name="TimeUtils"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_f85m8BwJEe2LY7Q5ZCUmEA" name="ApplicationAdapter"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_f88DMBwJEe2LY7Q5ZCUmEA" name="Gdx"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_f9YIEBwJEe2LY7Q5ZCUmEA" name="Input"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_f2kVcBwJEe2LY7Q5ZCUmEA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_f2k8gBwJEe2LY7Q5ZCUmEA" name="util">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_f9VEwBwJEe2LY7Q5ZCUmEA" name="Iterator"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_fkVV8BwJEe2LY7Q5ZCUmEA">
+      <eAnnotations xmi:id="_fkaOcBwJEe2LY7Q5ZCUmEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_fkfG8BwJEe2LY7Q5ZCUmEA" base_Package="_fL0IQBwJEe2LY7Q5ZCUmEA">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f3sW0BwJEe2LY7Q5ZCUmEA" base_Element="_f3qhoBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f3tk8BwJEe2LY7Q5ZCUmEA" base_Element="_f3qhoBwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f3uMABwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f3uzEBwJEe2LY7Q5ZCUmEA" base_Element="_f3uMARwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f3vaIBwJEe2LY7Q5ZCUmEA" base_Element="_f3uMARwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f3wBMBwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f3xPUBwJEe2LY7Q5ZCUmEA" base_Element="_f3woQBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f3x2YBwJEe2LY7Q5ZCUmEA" base_Element="_f3woQBwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f3x2YRwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f39ckBwJEe2LY7Q5ZCUmEA" base_Element="_f381gBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f3-DoBwJEe2LY7Q5ZCUmEA" base_Element="_f381gBwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f3-DoRwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f4Af4BwJEe2LY7Q5ZCUmEA" base_Element="_f3_40BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f4BuABwJEe2LY7Q5ZCUmEA" base_Element="_f3_40BwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f4BuARwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f4C8IBwJEe2LY7Q5ZCUmEA" base_Element="_f4BuAhwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Annotations xmi:id="_f4DjMBwJEe2LY7Q5ZCUmEA" base_Element="_f4BuAhwJEe2LY7Q5ZCUmEA">
+    <annotations xmi:id="_f4DjMRwJEe2LY7Q5ZCUmEA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_f861EBwJEe2LY7Q5ZCUmEA" base_Element="_f85m8BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f8_tkBwJEe2LY7Q5ZCUmEA" base_Element="_f88DMBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9Cw4BwJEe2LY7Q5ZCUmEA" base_Element="_f8_tkRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9EmEBwJEe2LY7Q5ZCUmEA" base_Element="_f9Cw4RwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9F0MBwJEe2LY7Q5ZCUmEA" base_Element="_f9EmERwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9HpYBwJEe2LY7Q5ZCUmEA" base_Element="_f9GbQBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9JekBwJEe2LY7Q5ZCUmEA" base_Element="_f9HpYRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9KssBwJEe2LY7Q5ZCUmEA" base_Element="_f9JekRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9L60BwJEe2LY7Q5ZCUmEA" base_Element="_f9KssRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9NI8BwJEe2LY7Q5ZCUmEA" base_Element="_f9L60RwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9XhABwJEe2LY7Q5ZCUmEA" base_Element="_f9VEwBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9ZWMBwJEe2LY7Q5ZCUmEA" base_Element="_f9YIEBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9bLYBwJEe2LY7Q5ZCUmEA" base_Element="_f9Z9QBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9dAkBwJEe2LY7Q5ZCUmEA" base_Element="_f9bLYRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9e1wBwJEe2LY7Q5ZCUmEA" base_Element="_f9dAkRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f9gD4BwJEe2LY7Q5ZCUmEA" base_Element="_f9fc0BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-ZbwBwJEe2LY7Q5ZCUmEA" base_Element="_f-YNoBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-b4ABwJEe2LY7Q5ZCUmEA" base_Element="_f-ap4BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-cfEBwJEe2LY7Q5ZCUmEA" base_Element="_f-b4ARwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-m3IBwJEe2LY7Q5ZCUmEA" base_Element="_f-dGIBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-sWsBwJEe2LY7Q5ZCUmEA" base_Element="_f-m3IRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-tk0BwJEe2LY7Q5ZCUmEA" base_Element="_f-sWsRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-xPMBwJEe2LY7Q5ZCUmEA" base_Element="_f-wBEBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-ydUBwJEe2LY7Q5ZCUmEA" base_Element="_f-x2QBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-zrcBwJEe2LY7Q5ZCUmEA" base_Element="_f-ydURwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-05kBwJEe2LY7Q5ZCUmEA" base_Element="_f-zrcRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-2uwBwJEe2LY7Q5ZCUmEA" base_Element="_f-1goBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-384BwJEe2LY7Q5ZCUmEA" base_Element="_f-2uwRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-6ZIBwJEe2LY7Q5ZCUmEA" base_Element="_f-384RwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Generics xmi:id="_f-7nQBwJEe2LY7Q5ZCUmEA" genericsValue="Rectangle" base_Element="_f-6ZIRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-8OUBwJEe2LY7Q5ZCUmEA" base_Element="_f-6ZIRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-9ccBwJEe2LY7Q5ZCUmEA" base_Element="_f-81YBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f--qkBwJEe2LY7Q5ZCUmEA" base_Element="_f--DgBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f-_4sBwJEe2LY7Q5ZCUmEA" base_Element="_f-_RoBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Generics xmi:id="_f_Bt4BwJEe2LY7Q5ZCUmEA" genericsValue="Rectangle" base_Element="_f_BG0BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_CU8BwJEe2LY7Q5ZCUmEA" base_Element="_f_BG0BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_DjEBwJEe2LY7Q5ZCUmEA" base_Element="_f_C8ABwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_ExMBwJEe2LY7Q5ZCUmEA" base_Element="_f_EKIBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_F_UBwJEe2LY7Q5ZCUmEA" base_Element="_f_ExMRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_avcBwJEe2LY7Q5ZCUmEA" base_Element="_f_F_URwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_ckoBwJEe2LY7Q5ZCUmEA" base_Element="_f_bWgBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_f_eZ0BwJEe2LY7Q5ZCUmEA" base_Element="_f_dLsBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f_868BwJEe2LY7Q5ZCUmEA" base_Element="_f_7s0BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f_-JEBwJEe2LY7Q5ZCUmEA" base_Element="_f_868RwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f_-wIBwJEe2LY7Q5ZCUmEA" base_Element="_f_-JERwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_f__-QBwJEe2LY7Q5ZCUmEA" base_Element="_f__XMBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAAlUBwJEe2LY7Q5ZCUmEA" base_Element="_f__-QRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gABzcBwJEe2LY7Q5ZCUmEA" base_Element="_gABMYBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gADBkBwJEe2LY7Q5ZCUmEA" base_Element="_gACagBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAEPsBwJEe2LY7Q5ZCUmEA" base_Element="_gADBkRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAE2wBwJEe2LY7Q5ZCUmEA" base_Element="_gAEPsRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAGE4BwJEe2LY7Q5ZCUmEA" base_Element="_gAFd0BwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAHTABwJEe2LY7Q5ZCUmEA" base_Element="_gAGE4RwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAH6EBwJEe2LY7Q5ZCUmEA" base_Element="_gAHTARwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAIhIBwJEe2LY7Q5ZCUmEA" base_Element="_gAH6ERwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAJvQBwJEe2LY7Q5ZCUmEA" base_Element="_gAJIMBwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAK9YBwJEe2LY7Q5ZCUmEA" base_Element="_gAJvQRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAMLgBwJEe2LY7Q5ZCUmEA" base_Element="_gAK9YRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAMykBwJEe2LY7Q5ZCUmEA" base_Element="_gAMLgRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAOAsBwJEe2LY7Q5ZCUmEA" base_Element="_gAMykRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAOnwBwJEe2LY7Q5ZCUmEA" base_Element="_gAOAsRwJEe2LY7Q5ZCUmEA"/>
+  <UMLLabProfile:Reference xmi:id="_gAP14BwJEe2LY7Q5ZCUmEA" base_Element="_gAPO0BwJEe2LY7Q5ZCUmEA"/>
+</xmi:XMI>
