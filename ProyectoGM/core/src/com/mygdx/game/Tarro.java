@@ -48,7 +48,7 @@ public class Tarro {
 		      bucket.width = 64;
 		      bucket.height = 64;
 	   }
-	   public void dañar() {
+	   public void danar() {
 		  vidas--;
 		  herido = true;
 		  tiempoHerido=tiempoHeridoMax;
