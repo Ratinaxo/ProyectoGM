@@ -16,35 +16,35 @@ public class GameLluvia extends ApplicationAdapter {
     private SpriteBatch batch;
     private BitmapFont font;
 
-    private Tarro tarro;
-    private Lluvia gotaBuenaLluvia;
-    private Lluvia gotaMalaLluvia;
+    private Tarro homero;
+    private Lluvia donutBuenaLluvia;
+    private Lluvia donutMalaLluvia;
 
     @Override
     public void create() {
         font = new BitmapFont();
 
-        Sound hurtSound = Gdx.audio.newSound(Gdx.files.internal("hurt.ogg"));
-        tarro = new Tarro(new Texture(Gdx.files.internal("bucket.png")), hurtSound);
+        Sound hurtSound = Gdx.audio.newSound(Gdx.files.internal("dou.mp3"));
+        homero = new Tarro(new Texture(Gdx.files.internal("homero.png")), hurtSound);
 
-        Texture gotaBuenaTexture = new Texture(Gdx.files.internal("drop.png"));
-        Texture gotaMalaTexture = new Texture(Gdx.files.internal("dropBad.png"));
+        Texture gotaBuenaTexture = new Texture(Gdx.files.internal("donut.png"));
+        Texture gotaMalaTexture = new Texture(Gdx.files.internal("donutBad.png"));
 
-        Sound dropSound = Gdx.audio.newSound(Gdx.files.internal("drop.wav"));
-        Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("rain.mp3"));
+        Sound dropSound = Gdx.audio.newSound(Gdx.files.internal("eructo.mp3"));
+        Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
 
-        gotaBuenaLluvia = new GotaBuena(gotaBuenaTexture, dropSound, rainMusic);
-        gotaMalaLluvia = new GotaMala(gotaMalaTexture, dropSound, rainMusic);
+        donutBuenaLluvia = new GotaBuena(gotaBuenaTexture, dropSound, rainMusic);
+        donutMalaLluvia = new GotaMala(gotaMalaTexture, dropSound, rainMusic);
 
         // Camera
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
         batch = new SpriteBatch();
 
-        tarro.crear();
+        homero.crear();
 
-        gotaBuenaLluvia.crear();
-        gotaMalaLluvia.crear();
+        donutBuenaLluvia.crear();
+        donutMalaLluvia.crear();
     }
 
     @Override
@@ -54,27 +54,27 @@ public class GameLluvia extends ApplicationAdapter {
         camera.update();      
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        font.draw(batch, "Gotas totales: " + tarro.getPuntos(), 5, 475);
-        font.draw(batch, "Vidas : " + tarro.getVidas(), 720, 475);
+        font.draw(batch, "Gotas totales: " + homero.getPuntos(), 5, 475);
+        font.draw(batch, "Vidas : " + homero.getVidas(), 720, 475);
 
-        if (!tarro.estaHerido()) {
-            tarro.actualizarMovimiento();
-            gotaBuenaLluvia.actualizarMovimiento(tarro);
-            gotaMalaLluvia.actualizarMovimiento(tarro);
+        if (!homero.estaHerido()) {
+            homero.actualizarMovimiento();
+            donutBuenaLluvia.actualizarMovimiento(homero);
+            donutMalaLluvia.actualizarMovimiento(homero);
         }
 
-        tarro.dibujar(batch);
-        gotaBuenaLluvia.actualizarDibujoLluvia(batch);
-        gotaMalaLluvia.actualizarDibujoLluvia(batch);
+        homero.dibujar(batch);
+        donutBuenaLluvia.actualizarDibujoLluvia(batch);
+        donutMalaLluvia.actualizarDibujoLluvia(batch);
 
         batch.end();
     }
 
     @Override
     public void dispose() {
-        tarro.destruir();
-        gotaBuenaLluvia.destruir();
-        gotaMalaLluvia.destruir();
+        homero.destruir();
+        donutBuenaLluvia.destruir();
+        donutMalaLluvia.destruir();
         batch.dispose();
         font.dispose();
     }
