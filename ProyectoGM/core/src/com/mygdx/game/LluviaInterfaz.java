@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public interface LluviaInterfaz {
     void crear();
-    boolean actualizarMovimiento(Tarro tarro);
+    boolean actualizarMovimiento(Homero tarro);
     void actualizarDibujoLluvia(SpriteBatch batch);
     void destruir();
     void pausar();

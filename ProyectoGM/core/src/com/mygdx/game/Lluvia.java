@@ -10,31 +10,31 @@ import com.badlogic.gdx.utils.Array;
 public abstract class Lluvia {
     protected Array<Rectangle> rainDropsPos;
     protected long lastDropTime;
-    protected Texture gotaTexture;
-    protected Sound dropSound;
+    protected Texture donutTexture;
+    protected Sound donutSound;
     protected Music rainMusic;
 
     public Lluvia(Texture gotaTexture, Sound ss, Music mm) {
-        this.gotaTexture = gotaTexture;
-        dropSound = ss;
+        this.donutTexture = gotaTexture;
+        donutSound = ss;
         rainMusic = mm;
     }
 
     public void crear() {
         rainDropsPos = new Array<Rectangle>();
-        crearGotaDeLluvia();
+        crearDonutDeLluvia();
         rainMusic.setLooping(true);
         rainMusic.play();
     }
 
-    protected abstract void crearGotaDeLluvia();
+    protected abstract void crearDonutDeLluvia();
 
-    public abstract boolean actualizarMovimiento(Tarro tarro);
+    public abstract boolean actualizarMovimiento(Homero tarro);
 
     public abstract void actualizarDibujoLluvia(SpriteBatch batch);
 
     public void destruir() {
-        dropSound.dispose();
+        donutSound.dispose();
         rainMusic.dispose();
     }
 

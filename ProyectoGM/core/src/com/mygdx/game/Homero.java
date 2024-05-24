@@ -9,9 +9,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class Tarro {
+public class Homero {
 	   private Rectangle bucket;
-	   private Texture bucketImage;
+	   private Texture homeroImage;
 	   private Sound sonidoHerido;
 	   private int vidas = 3;
 	   private int puntos = 0;
@@ -20,8 +20,8 @@ public class Tarro {
 	   private int tiempoHeridoMax=50;
 	   private int tiempoHerido;
 	   
-	   public Tarro(Texture tex, Sound ss) {
-		   bucketImage = tex;
+	   public Homero(Texture tex, Sound ss) {
+		   homeroImage = tex;
 		   sonidoHerido = ss;
 	   }
 	   
@@ -56,10 +56,10 @@ public class Tarro {
 	   }
 	   public void dibujar(SpriteBatch batch) {
 		 if (!herido)  
-		   batch.draw(bucketImage, bucket.x, bucket.y);
+		   batch.draw(homeroImage, bucket.x, bucket.y);
 		 else {
 		
-		   batch.draw(bucketImage, bucket.x, bucket.y+ MathUtils.random(-5,5));
+		   batch.draw(homeroImage, bucket.x, bucket.y+ MathUtils.random(-5,5));
 		   tiempoHerido--;
 		   if (tiempoHerido<=0) herido = false;
 		 }
@@ -84,7 +84,7 @@ public class Tarro {
 	    
 
 	public void destruir() {
-		    bucketImage.dispose();
+		    homeroImage.dispose();
 	   }
 	
    public boolean estaHerido() {

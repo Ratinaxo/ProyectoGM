@@ -16,7 +16,7 @@ public class GameLluvia extends ApplicationAdapter {
     private SpriteBatch batch;
     private BitmapFont font;
 
-    private Tarro homero;
+    private Homero homero;
     private Lluvia donutBuenaLluvia;
     private Lluvia donutMalaLluvia;
 
@@ -25,7 +25,7 @@ public class GameLluvia extends ApplicationAdapter {
         font = new BitmapFont();
 
         Sound hurtSound = Gdx.audio.newSound(Gdx.files.internal("dou.mp3"));
-        homero = new Tarro(new Texture(Gdx.files.internal("homero.png")), hurtSound);
+        homero = new Homero(new Texture(Gdx.files.internal("homero.png")), hurtSound);
 
         Texture gotaBuenaTexture = new Texture(Gdx.files.internal("donut.png"));
         Texture gotaMalaTexture = new Texture(Gdx.files.internal("donutBad.png"));
@@ -33,8 +33,8 @@ public class GameLluvia extends ApplicationAdapter {
         Sound dropSound = Gdx.audio.newSound(Gdx.files.internal("eructo.mp3"));
         Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
 
-        donutBuenaLluvia = new GotaBuena(gotaBuenaTexture, dropSound, rainMusic);
-        donutMalaLluvia = new GotaMala(gotaMalaTexture, dropSound, rainMusic);
+        donutBuenaLluvia = new DonutBueno(gotaBuenaTexture, dropSound, rainMusic);
+        donutMalaLluvia = new DonutMalo(gotaMalaTexture, dropSound, rainMusic);
 
         // Camera
         camera = new OrthographicCamera();

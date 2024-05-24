@@ -9,13 +9,13 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.TimeUtils;
 
-class GotaBuena extends Lluvia implements LluviaInterfaz {
-    public GotaBuena(Texture gotaBuena, Sound ss, Music mm) {
-        super(gotaBuena, ss, mm);
+class DonutMalo extends Lluvia implements LluviaInterfaz {
+    public DonutMalo(Texture gotaMala, Sound ss, Music mm) {
+        super(gotaMala, ss, mm);
     }
 
     @Override
-    protected void crearGotaDeLluvia() {
+    protected void crearDonutDeLluvia() {
         Rectangle raindrop = new Rectangle();
         raindrop.x = MathUtils.random(0, 800 - 64);
         raindrop.y = 480;
@@ -26,8 +26,8 @@ class GotaBuena extends Lluvia implements LluviaInterfaz {
     }
 
     @Override
-    public boolean actualizarMovimiento(Tarro tarro) {
-        if (TimeUtils.nanoTime() - lastDropTime > 100000000) crearGotaDeLluvia();
+    public boolean actualizarMovimiento(Homero tarro) {
+        if (TimeUtils.nanoTime() - lastDropTime > 300000000) crearDonutDeLluvia();
 
         for (int i = 0; i < rainDropsPos.size; i++) {
             Rectangle raindrop = rainDropsPos.get(i);
@@ -37,8 +37,8 @@ class GotaBuena extends Lluvia implements LluviaInterfaz {
                 continue;
             }
             if (raindrop.overlaps(tarro.getArea())) {
-                tarro.sumarPuntos(10);
-                dropSound.play();
+                tarro.danar();
+                if (tarro.getVidas() <= 0) return false;
                 rainDropsPos.removeIndex(i);
             }
         }
@@ -48,13 +48,13 @@ class GotaBuena extends Lluvia implements LluviaInterfaz {
     @Override
     public void actualizarDibujoLluvia(SpriteBatch batch) {
         for (Rectangle raindrop : rainDropsPos) {
-            batch.draw(gotaTexture, raindrop.x, raindrop.y);
+            batch.draw(donutTexture, raindrop.x, raindrop.y);
         }
     }
 
     @Override
     public void destruir() {
-        dropSound.dispose();
+        donutSound.dispose();
         rainMusic.dispose();
     }
 
