@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 public class Homero {
 	   private Rectangle bucket;
-	   private Texture homeroImage;
+	   private Texture bucketImage;
 	   private Sound sonidoHerido;
 	   private int vidas = 3;
 	   private int puntos = 0;
@@ -21,7 +21,7 @@ public class Homero {
 	   private int tiempoHerido;
 	   
 	   public Homero(Texture tex, Sound ss) {
-		   homeroImage = tex;
+		   bucketImage = tex;
 		   sonidoHerido = ss;
 	   }
 	   
@@ -48,7 +48,7 @@ public class Homero {
 		      bucket.width = 64;
 		      bucket.height = 64;
 	   }
-	   public void danar() {
+	   public void dañar() {
 		  vidas--;
 		  herido = true;
 		  tiempoHerido=tiempoHeridoMax;
@@ -56,10 +56,10 @@ public class Homero {
 	   }
 	   public void dibujar(SpriteBatch batch) {
 		 if (!herido)  
-		   batch.draw(homeroImage, bucket.x, bucket.y);
+		   batch.draw(bucketImage, bucket.x, bucket.y);
 		 else {
 		
-		   batch.draw(homeroImage, bucket.x, bucket.y+ MathUtils.random(-5,5));
+		   batch.draw(bucketImage, bucket.x, bucket.y+ MathUtils.random(-5,5));
 		   tiempoHerido--;
 		   if (tiempoHerido<=0) herido = false;
 		 }
@@ -84,7 +84,7 @@ public class Homero {
 	    
 
 	public void destruir() {
-		    homeroImage.dispose();
+		    bucketImage.dispose();
 	   }
 	
    public boolean estaHerido() {
