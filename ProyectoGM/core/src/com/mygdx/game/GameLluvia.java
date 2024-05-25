@@ -34,13 +34,13 @@ public class GameLluvia extends ApplicationAdapter {
 		  homero = new Homero(new Texture(Gdx.files.internal("homero.png")),hurtSound);
           
 	      // load the drop sound effect and the rain background "music" 
-          Texture donaBuena = new Texture(Gdx.files.internal("donut.png"));
+          Texture donaBuena = new Texture(Gdx.files.internal("donutGood.png"));
           Texture donaMala = new Texture(Gdx.files.internal("donutBad.png"));
-          
+          Texture pez = new Texture(Gdx.files.internal("pezRadioactivo.png"));
           Sound dropSound = Gdx.audio.newSound(Gdx.files.internal("eructo.mp3"));
          
 	      Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
-          lanzador = new LanzadorObjetos(donaBuena, donaMala, dropSound, rainMusic);
+          lanzador = new LanzadorObjetos(donaBuena, donaMala, pez, dropSound, rainMusic);
 	      
 	      // camera
 	      camera = new OrthographicCamera();

@@ -9,9 +9,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class Homero {
-	   private Rectangle bucket;
-	   private Texture bucketImage;
+public class Homero implements PersonajeInterfaz{
+	   private Rectangle homeroHitbox;
+	   private Texture homeroTexture;
 	   private Sound sonidoHerido;
 	   private int vidas = 3;
 	   private int puntos = 0;
@@ -20,9 +20,9 @@ public class Homero {
 	   private int tiempoHeridoMax=50;
 	   private int tiempoHerido;
 	   
-	   public Homero(Texture tex, Sound ss) {
-		   bucketImage = tex;
-		   sonidoHerido = ss;
+	   public Homero(Texture homeroTexture, Sound sonidoHerido) {
+		   this.homeroTexture = homeroTexture;
+		   this.sonidoHerido = sonidoHerido;
 	   }
 	   
 		public int getVidas() {
@@ -32,8 +32,8 @@ public class Homero {
 		public int getPuntos() {
 			return puntos;
 		}
-		public Rectangle getArea() {
-			return bucket;
+		public Rectangle getHitbox() {
+			return homeroHitbox;
 		}
 		public void sumarPuntos(int pp) {
 			puntos+=pp;
@@ -42,11 +42,11 @@ public class Homero {
 	
 	   public void crear() {
 
-		      bucket = new Rectangle();
-		      bucket.x = 800 / 2 - 64 / 2;
-		      bucket.y = 20;
-		      bucket.width = 64;
-		      bucket.height = 64;
+		   homeroHitbox = new Rectangle();
+		   homeroHitbox.x = 800 / 2 - 64 / 2;
+		   homeroHitbox.y = 20;
+		   homeroHitbox.width = 64;
+		   homeroHitbox.height = 64;
 	   }
 	   public void dañar() {
 		  vidas--;
@@ -54,12 +54,13 @@ public class Homero {
 		  tiempoHerido=tiempoHeridoMax;
 		  sonidoHerido.play();
 	   }
+	   
 	   public void dibujar(SpriteBatch batch) {
 		 if (!herido)  
-		   batch.draw(bucketImage, bucket.x, bucket.y);
+		   batch.draw(homeroTexture, homeroHitbox.x, homeroHitbox.y);
 		 else {
 		
-		   batch.draw(bucketImage, bucket.x, bucket.y+ MathUtils.random(-5,5));
+		   batch.draw(homeroTexture, homeroHitbox.x, homeroHitbox.y+ MathUtils.random(-5,5));
 		   tiempoHerido--;
 		   if (tiempoHerido<=0) herido = false;
 		 }
@@ -67,28 +68,39 @@ public class Homero {
 	   
 	   
 	   public void actualizarMovimiento() { 
-		   // movimiento desde mouse/touch
-		   /*if(Gdx.input.isTouched()) {
-			      Vector3 touchPos = new Vector3();
-			      touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-			      camera.unproject(touchPos);
-			      bucket.x = touchPos.x - 64 / 2;
-			}*/
 		   //movimiento desde teclado
-		   if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) bucket.x -= velx * Gdx.graphics.getDeltaTime();
-		   if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) bucket.x += velx * Gdx.graphics.getDeltaTime();
+		   if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) homeroHitbox.x -= velx * Gdx.graphics.getDeltaTime();
+		   if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) homeroHitbox.x += velx * Gdx.graphics.getDeltaTime();
 		   // que no se salga de los bordes izq y der
-		   if(bucket.x < 0) bucket.x = 0;
-		   if(bucket.x > 800 - 64) bucket.x = 800 - 64;
+		   if(homeroHitbox.x < 0) homeroHitbox.x = 0;
+		   if(homeroHitbox.x > 800 - 64) homeroHitbox.x = 800 - 64;
 	   }
 	    
 
 	public void destruir() {
-		    bucketImage.dispose();
+		homeroTexture.dispose();
 	   }
 	
    public boolean estaHerido() {
 	   return herido;
    }
+
+   @Override
+   public int sumarPuntos() {
+	   // TODO Auto-generated method stub
+	   return 0;
+   }
+
+   @Override
+   public void danar() {
+	   // TODO Auto-generated method stub
+	
+   }
+
+@Override
+public void cambiarPersonaje() {
+	// TODO Auto-generated method stub
+	
+}
 	   
 }

@@ -10,15 +10,19 @@ public class DonaBuena extends ObjetoCayendo{
 		super(texturaDonaBuena);
 		this.velY = 300;
 		this.tipoObjeto = 0;
+		crearObjetoHitBox();
 	}
 
 	
+	@Override
 	public void crearObjetoHitBox() {
 		Rectangle donutHitbox = new Rectangle();
         donutHitbox.x = MathUtils.random(0, 800 - 64);
         donutHitbox.y = 480;
         donutHitbox.width = 64;
         donutHitbox.height = 64;
+        this.hitboxObjeto = donutHitbox;
+
 	}
 	
 	
