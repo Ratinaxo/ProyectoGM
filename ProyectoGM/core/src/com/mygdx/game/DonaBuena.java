@@ -8,8 +8,9 @@ public class DonaBuena extends ObjetoCayendo{
 	
 	public DonaBuena(Texture texturaDonaBuena) {
 		super(texturaDonaBuena);
-		this.velY = 300;
+		this.velY = MathUtils.random(250 , 350);
 		this.tipoObjeto = 0;
+		this.puntajeObjeto = 5;
 		crearObjetoHitBox();
 	}
 
@@ -17,13 +18,21 @@ public class DonaBuena extends ObjetoCayendo{
 	@Override
 	public void crearObjetoHitBox() {
 		Rectangle donutHitbox = new Rectangle();
-        donutHitbox.x = MathUtils.random(0, 800 - 64);
+        donutHitbox.x = MathUtils.random(0, 800 - 70);
         donutHitbox.y = 480;
-        donutHitbox.width = 64;
-        donutHitbox.height = 64;
+        donutHitbox.width = 70;
+        donutHitbox.height = 71;
         this.hitboxObjeto = donutHitbox;
-
 	}
+
+
+	@Override
+	public void colisionar(Personaje personaje) {
+		personaje.sumarPuntos(puntajeObjeto);
+		
+	}
+
+
 	
 	
 }

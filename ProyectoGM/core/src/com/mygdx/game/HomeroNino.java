@@ -4,43 +4,77 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
-public class HomeroNino extends HomeroAbs {
-	private int velX = 800;
-	
-	public HomeroNino(Texture tex, Sound ss, int tipo) {
-		super(tex, ss, tipo);
-		
-	}
 
-	public void crear() {
-		homeroHitbox = new Rectangle();
-		homeroHitbox.x = 800 / 2 - 64 / 2;
-		homeroHitbox.y = 10;
-		homeroHitbox.width = 16;
-		homeroHitbox.height = 16;
+public class HomeroNino extends Personaje{
+	private Sound sonidoHerido;
+	private int velx = 400;
+	private boolean herido = false;
+	private int tiempoHeridoMax=50;
+	private int tiempoHerido;
+	private int idPersonaje;
+	public boolean cambiarPersonaje;
+	
+	public HomeroNino(Texture homeroTexture, Sound sonidoHerido, int idPersonaje) {
+		super(homeroTexture, sonidoHerido, idPersonaje);
+		this.cambiarPersonaje = false;
+	}
+	   
+	public int getIdPersonaje() {
+		return idPersonaje;
 	}
 	
+	public void sumarPuntos(int pp) {
+		GameLluvia.puntos+=2*pp;
+	}
+		
 	
-	public void danar() 
-	{
-		vidas -= 2;
+	public void crear() {
+		hitboxPersonaje = new Rectangle();
+		hitboxPersonaje.x = 800 / 2 - 64 / 2;
+		hitboxPersonaje.y = 20;
+		hitboxPersonaje.width = 64;
+		hitboxPersonaje.height = 64;
+	}
+	
+	public void danar(int n) {
+		vidas-=n-1;
 		herido = true;
 		tiempoHerido=tiempoHeridoMax;
 		sonidoHerido.play();
-	}	
-	
-	public void sumarPuntos() {
-		this.puntos += 20; 
 	}
-	
+
+	public void dibujar(SpriteBatch batch) {
+		if (!herido)  
+			batch.draw(texturaPersonaje, hitboxPersonaje.x, hitboxPersonaje.y);
+		else {
+			batch.draw(texturaPersonaje, hitboxPersonaje.x, hitboxPersonaje.y+ MathUtils.random(-5,5));
+			tiempoHerido--;
+			if (tiempoHerido<=0) herido = false;
+		}
+	} 
+	   
 	public void actualizarMovimiento() { 
-	//movimiento desde teclado
-		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) homeroHitbox.x -= velX * Gdx.graphics.getDeltaTime();
-		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) homeroHitbox.x += velX * Gdx.graphics.getDeltaTime();
+		//movimiento desde teclado
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) hitboxPersonaje.x -= velx * Gdx.graphics.getDeltaTime();
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) hitboxPersonaje.x += velx * Gdx.graphics.getDeltaTime();
 		// que no se salga de los bordes izq y der
-		if(homeroHitbox.x < 0) homeroHitbox.x = 0;
-		if(homeroHitbox.x > 800 - 16) homeroHitbox.x = 800 - 16;
-	}	
+		if(hitboxPersonaje.x < 0) hitboxPersonaje.x = 0;
+		if(hitboxPersonaje.x > 800 - 64) hitboxPersonaje.x = 800 - 64;
+	}
+	    
+	
+	public boolean estaHerido() {
+		return herido;
+	}
+
+	
+	public void cambiarPersonaje(Personaje personajeEntrante) {
+		this.texturaPersonaje = personajeEntrante.getTexture();
+		this.hitboxPersonaje = personajeEntrante.getHitbox();
+		this.idPersonaje = personajeEntrante.getIdPersonaje();
+	}   
 }

@@ -3,18 +3,21 @@ package com.mygdx.game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 
-public abstract class ObjetoCayendo {
+public abstract class ObjetoCayendo implements Colisionable {
 	
 	protected Texture texturaObjeto;
 	protected int tipoObjeto;
 	protected Rectangle hitboxObjeto;
 	protected int velY;
-
+	protected int puntajeObjeto;
 	
 	public ObjetoCayendo(Texture texturaObjeto) {
 		this.texturaObjeto = texturaObjeto;
 	}
 
+	public int getPuntos() {
+		return puntajeObjeto;
+	}
 	
 	public abstract void crearObjetoHitBox();
 	
