@@ -29,6 +29,7 @@ public class GameLluvia extends ApplicationAdapter {
 	public static int scoreMultiplier;
 	public static int lifeMultiplier;
 	public static int damageMultiplier;
+	public static int combo;
 	private static int idPersonaje;
 	
 	public void create () {
@@ -39,6 +40,7 @@ public class GameLluvia extends ApplicationAdapter {
 		herido = false;
 		personajes = new Array<Personaje>();
 		font = new BitmapFont(); // use libGDX's default Arial font
+		int combo = 1;
 		
 		Array<ObjetoCayendo> objetos = new Array<ObjetoCayendo>();
 		
@@ -73,7 +75,8 @@ public class GameLluvia extends ApplicationAdapter {
 	}
 	
 	public static void actualizarPuntaje(int pp) {
-		puntos += pp*scoreMultiplier;
+		if (combo != 0) puntos += pp*scoreMultiplier*combo;
+		else puntos += pp*scoreMultiplier; 
 	}
 	
 	public static void actualizarVida(int vv) {
@@ -82,6 +85,7 @@ public class GameLluvia extends ApplicationAdapter {
 		}
 		else vidas += vv*damageMultiplier;
 	}
+	
 	
 	public static void actualizarEstadoHerido (boolean estado) {
 		herido = estado;
@@ -102,6 +106,14 @@ public class GameLluvia extends ApplicationAdapter {
 	public static void setDamageMultiplier(int n) {
 		damageMultiplier = n;
 	}
+	public static void aumentarCombo() {
+		combo += 1;
+	}
+	
+	public static void resetCombo() {
+		combo = 0;
+	}
+	
 	
 	public static void cambiarPersonaje() {
 		float pos = personajeActual.getPosX();
@@ -129,6 +141,7 @@ public class GameLluvia extends ApplicationAdapter {
 		
 		//dibujar textos
 		font.draw(batch, "Puntos totales: " + puntos, 5, 475);
+		font.draw(batch, "COMBO X" + combo, 5, 455);
 		font.draw(batch, "Vidas : " + vidas, 720, 475);
 		
 		

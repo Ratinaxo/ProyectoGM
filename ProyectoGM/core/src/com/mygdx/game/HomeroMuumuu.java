@@ -64,7 +64,6 @@ public class HomeroMuumuu implements Personaje{
 			batch.draw(texturePersonaje, hitbox.x, hitbox.y);
 		}
 		else {
-			
 			batch.draw(texturePersonaje, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
 			tiempoHerido--;
 				

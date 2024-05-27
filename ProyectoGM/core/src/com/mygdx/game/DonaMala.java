@@ -32,6 +32,7 @@ public class DonaMala extends ObjetoCayendo{
 		GameLluvia.actualizarPuntaje(puntajeObjeto);
 		GameLluvia.actualizarVida(damage);
 		GameLluvia.actualizarEstadoHerido(true);
+		GameLluvia.resetCombo();
 		sonidoObjeto.play();
 	}
 }
