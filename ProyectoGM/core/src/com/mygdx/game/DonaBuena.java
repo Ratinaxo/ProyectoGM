@@ -1,38 +1,38 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 public class DonaBuena extends ObjetoCayendo{
+	private int puntajeObjeto;
 	
-	public DonaBuena(Texture texturaDonaBuena) {
-		super(texturaDonaBuena);
-		this.velY = MathUtils.random(250 , 350);
-		this.tipoObjeto = 0;
+	public DonaBuena(Texture texturaDonaBuena, Sound sonidoObjeto) {
+		super(texturaDonaBuena, sonidoObjeto);
+		this.hitboxObjeto = new Rectangle();
+		this.hitboxObjeto.height = 0;
+		this.hitboxObjeto.width = 0;
+		this.velY = MathUtils.random(250, 650);
+		this.sonidoObjeto = sonidoObjeto;
 		this.puntajeObjeto = 5;
-		crearObjetoHitBox();
 	}
 
 	
-	@Override
-	public void crearObjetoHitBox() {
-		Rectangle donutHitbox = new Rectangle();
-        donutHitbox.x = MathUtils.random(0, 800 - 70);
-        donutHitbox.y = 480;
-        donutHitbox.width = 70;
-        donutHitbox.height = 71;
-        this.hitboxObjeto = donutHitbox;
-	}
-
-
-	@Override
-	public void colisionar(Personaje personaje) {
-		personaje.sumarPuntos(puntajeObjeto);
-		
+	public Rectangle crearObjetoHitbox() {
+		hitboxObjeto.x = MathUtils.random(0, 800 - 70);
+		hitboxObjeto.y = 480;
+		hitboxObjeto.width = 70;
+		hitboxObjeto.height = 71;
+		return hitboxObjeto;
 	}
 
 
 	
+	public void colisionar() {
+		GameLluvia.actualizarPuntaje(puntajeObjeto);
+		sonidoObjeto.play();
+		eliminar();
+	}
 	
 }

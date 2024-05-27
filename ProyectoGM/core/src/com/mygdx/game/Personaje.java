@@ -1,56 +1,28 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
-public abstract class Personaje implements PersonajeInterfaz{
-	protected Texture texturaPersonaje;
-	protected Rectangle hitboxPersonaje;
-	protected Sound sonidoHerido;
-	protected int idPersonaje;
-	protected int velX;
-	protected int vidas;
+public interface Personaje {
+
+	public void crear();
 	
-	public Personaje(Texture tt, Sound ss, int id) {
-		this.texturaPersonaje = tt;
-		this.sonidoHerido = ss;
-		this.idPersonaje = id;
-		this.vidas = 3;
-	}
+	public void actualizarMovimiento();
 	
-	public abstract boolean estaHerido();
+	public void dibujar(SpriteBatch batch);
 	
-	public abstract void danar(int dano);
+	public float getPosX();
 	
-	public abstract void sumarPuntos(int pp);
+	public void setPosX(float posX);
 	
-	public abstract void actualizarMovimiento();
+	public Rectangle getHitbox();
 	
-	public abstract void cambiarPersonaje(Personaje personajeEntrante);
+	public Texture getTexture();
 	
-	public void destruir() {
-		texturaPersonaje.dispose();
-	}
+	//public void cambiarPersonaje();
 	
-	public Rectangle getHitbox() {
-		return this.hitboxPersonaje;
-	}
+	public void destroy();
 	
-	public Texture getTexture() {
-		return texturaPersonaje;
-	}
-	
-	public Sound getSound() {
-		return sonidoHerido;
-	}
-	
-	public int getIdPersonaje() {
-		return idPersonaje;
-	}
-	
-	public int getVidas() {
-		return vidas;
-	}
 	
 }

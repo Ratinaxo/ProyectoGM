@@ -2,8 +2,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -11,101 +9,108 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
 
 public class LanzadorObjetos {
-	private Array<Rectangle> objectDropsPos;
-	private Array<ObjetoCayendo> objectDropsType;
-    private Texture donaBuenaTexture;
-    private Texture donaMalaTexture;
-    private Texture pezTexture;
+	private Array<ObjetoCayendo> objetosType;
+	private Array<Rectangle> objetosPos;
     private long lastDropTime;
-    private Sound dropSound;
-    private Music rainMusic;
-	   
+    private Music backgroundMusic;
     private DonaBuena donaBuena;
     private DonaMala donaMala;
-    private PezRadioactivo pez;
+    private Corazon corazon;
+    private int cambio;
     
-    private int velY;
-    
-	public LanzadorObjetos(Texture donaBuenaTexture, Texture donaMalaTexture, Texture pezTexture, Sound ss, Music mm) {
-		rainMusic = mm;
-		dropSound = ss;
-		this.donaBuenaTexture = donaBuenaTexture;
-		this.donaMalaTexture = donaMalaTexture;
-		this.pezTexture = pezTexture;
+	public LanzadorObjetos(Array<ObjetoCayendo> objetos, Music mm) {
+		this.cambio = GameLluvia.getPuntos() ;
+		this.donaBuena = (DonaBuena)objetos.get(0);
+		this.donaMala = (DonaMala)objetos.get(1);
+		this.corazon = (Corazon)objetos.get(2);
+		
+		this.backgroundMusic = mm;
+		crear();
 	}
 	
 	public void crear() {
-		objectDropsPos = new Array<Rectangle>();
-		objectDropsType = new Array<ObjetoCayendo>();
+		objetosPos = new Array<Rectangle>();
+		objetosType = new Array<ObjetoCayendo>();
 		crearObjeto();
 		//start the playback of the background music immediately
-	    rainMusic.setLooping(true);
-	    rainMusic.play();
+		backgroundMusic.setLooping(true);
+		backgroundMusic.play();
 	}
 	
 	private void crearObjeto() {
 		int randNum = MathUtils.random(1,100);
-		 
-		if (randNum <= 70) { //70% dona normal 	    	  
-			donaBuena = new DonaBuena(donaBuenaTexture);
-			objectDropsPos.add(donaBuena.getHitbox());
-			objectDropsType.add(donaBuena);
-			velY = donaBuena.getVelY();
-			
-		}else
-		if (randNum <= 95){ // 20% dona dañina
-			donaMala = new DonaMala(donaMalaTexture);
-			objectDropsPos.add(donaMala.getHitbox());
-			objectDropsType.add(donaMala);
-			velY = donaMala.getVelY();
-		} else
-		if (randNum <= 100 ){ //10% pez radioactivo (Cambio de personaje)
-			pez = new PezRadioactivo(pezTexture);
-			objectDropsPos.add(pez.getHitbox());
-			objectDropsType.add(pez);
-			velY = pez.getVelY();
+		
+		if (randNum <= 65) { //60% dona normal
+			DonaBuena oo = new DonaBuena(donaBuena.getTexture(), donaBuena.getSound());
+			Rectangle hitbox = oo.crearObjetoHitbox();
+			objetosPos.add(hitbox);
+			objetosType.add(oo);
+
 		}
+		else if (randNum <= 90){ // 30% dona dañina
+			DonaMala oo = new DonaMala(donaMala.getTexture(), donaMala.getSound());
+			Rectangle hitbox = oo.crearObjetoHitbox();
+			objetosPos.add(hitbox);
+			objetosType.add(oo);
+
+		}
+		else{ // 5% Vida
+			Corazon oo = new Corazon(corazon.getTexture(), corazon.getSound());
+			Rectangle hitbox = oo.crearObjetoHitbox();
+			objetosPos.add(hitbox);
+			objetosType.add(oo);
+
+		}
+
 		
 		lastDropTime = TimeUtils.nanoTime();
 	}
 	
-	public void actualizarMovimiento(Personaje personajeActual) { 
+	public void actualizarMovimiento(Rectangle hitboxPersonaje) { 
 		// generar objetos en caida
 		if(TimeUtils.nanoTime() - lastDropTime > 100500000)
 			crearObjeto();
 	  
 		// revisar si los objetos cayeron al suelo o chocaron contra el personaje
-		for (int i=0; i < objectDropsPos.size; i++ ) {
+		for (int i=0; i < objetosPos.size; i++ ) {
 			
-			Rectangle hitbox = objectDropsPos.get(i);
-			objectDropsPos.get(i).y -= objectDropsType.get(i).getVelY() * Gdx.graphics.getDeltaTime();
+			objetosPos.get(i).y -= objetosType.get(i).getVelY() * Gdx.graphics.getDeltaTime();
+			
 			//cae al suelo y se elimina
-			if(hitbox.y + 64 < 0) {
-				objectDropsPos.removeIndex(i); 
-				objectDropsType.removeIndex(i);
+			if(objetosPos.get(i).y + 64 < 0) {
+
+				objetosType.get(i).eliminar();
+				objetosType.removeIndex(i); 
+				objetosPos.removeIndex(i);
 			}
 			
-			if(hitbox.overlaps(personajeActual.getHitbox())) { //el objeto choca contra el personaje
+			if(objetosPos.get(i).overlaps(hitboxPersonaje)) { //el objeto choca contra el personaje
 				//Acciones de la colision
+				cambio = GameLluvia.getPuntos();
+				objetosType.get(i).colisionar();
+				objetosType.removeIndex(i);
+				objetosPos.removeIndex(i);
 				
-				objectDropsType.get(i).colisionar(personajeActual);
 				
-				dropSound.play();
-				objectDropsPos.removeIndex(i);
-				objectDropsType.removeIndex(i);
-	
+
+				
+				
+				if ((GameLluvia.getPuntos() % 50) == 0) {
+					System.out.println(GameLluvia.getPuntos() % 50);
+					GameLluvia.cambiarPersonaje();
+				}
 			}
 		}
+			
 	}   
 	
 	public void actualizarDibujoLluvia(SpriteBatch batch) { 
-		for (int i=0; i < objectDropsPos.size; i++ ) {
-			batch.draw(objectDropsType.get(i).getTexture(), objectDropsPos.get(i).x, objectDropsPos.get(i).y);
+		for (int i=0; i < objetosPos.size; i++ ) {
+			batch.draw(objetosType.get(i).getTexture(), objetosPos.get(i).x, objetosPos.get(i).y);
 		}
 	}
 	
 	public void destruir() {
-		dropSound.dispose();
-		rainMusic.dispose();
+		backgroundMusic.dispose();
 	}
 }

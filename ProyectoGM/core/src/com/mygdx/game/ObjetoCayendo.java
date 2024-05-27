@@ -1,40 +1,48 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 
-public abstract class ObjetoCayendo implements Colisionable {
-	
-	protected Texture texturaObjeto;
-	protected int tipoObjeto;
+public abstract class ObjetoCayendo {
 	protected Rectangle hitboxObjeto;
+	protected Texture texturaObjeto;
+	protected Sound sonidoObjeto;
 	protected int velY;
-	protected int puntajeObjeto;
 	
-	public ObjetoCayendo(Texture texturaObjeto) {
+	public ObjetoCayendo(Texture texturaObjeto, Sound sonidoObjeto) {
 		this.texturaObjeto = texturaObjeto;
+		this.sonidoObjeto = sonidoObjeto;
 	}
 
-	public int getPuntos() {
-		return puntajeObjeto;
-	}
-	
-	public abstract void crearObjetoHitBox();
-	
-	public Texture getTexture(){
-		return texturaObjeto;
-	}
-	
 	public Rectangle getHitbox() {
 		return hitboxObjeto;
 	}
 	
-	public int getTipoObjeto() {
-		return tipoObjeto;
+	public Texture getTexture() {
+		return texturaObjeto;
 	}
+
+	public Sound getSound() {
+		return sonidoObjeto;
+	}
+		
+	public abstract Rectangle crearObjetoHitbox();
 	
+	public abstract void colisionar();
+	
+	public void destroy() {
+		texturaObjeto.dispose();
+		sonidoObjeto.dispose();
+	}	
+
 	public int getVelY() {
 		return velY;
+	}
+	
+	public void eliminar() {
+		hitboxObjeto.width = 0;
+		hitboxObjeto.height = 0;
 	}
 	
 }

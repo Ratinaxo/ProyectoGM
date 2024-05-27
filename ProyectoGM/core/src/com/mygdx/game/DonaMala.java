@@ -1,37 +1,37 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 public class DonaMala extends ObjetoCayendo{
-	private int hurts;
+	protected int puntajeObjeto;
+	private int damage;
 	
-	public DonaMala(Texture texturaDonaMala) {
-		super(texturaDonaMala);
-		this.velY = MathUtils.random(400, 700);;
-		this.tipoObjeto = 1;
+	public DonaMala(Texture texturaDonaMala, Sound sonidoObjeto) {
+		super(texturaDonaMala, sonidoObjeto);
+		this.hitboxObjeto = new Rectangle();
+		this.hitboxObjeto.height = 0;
+		this.hitboxObjeto.width = 0;
+		this.velY = MathUtils.random(450, 800);
 		this.puntajeObjeto = -15;
-		this.hurts = 1;
-		crearObjetoHitBox();
+		this.damage = -1;
 	}
 
-	public void crearObjetoHitBox() {
-		Rectangle donutHitbox = new Rectangle();
-        donutHitbox.x = MathUtils.random(0, 800 - 45);
-        donutHitbox.y = 480;
-        donutHitbox.width = 45;
-        donutHitbox.height = 46;
-        this.hitboxObjeto = donutHitbox;
+	public Rectangle crearObjetoHitbox() {
+        hitboxObjeto.x = MathUtils.random(0, 800 - 45);
+        hitboxObjeto.y = 480;
+        hitboxObjeto.width = 45;
+        hitboxObjeto.height = 46;
+        return hitboxObjeto;
 	}
 
 
-	public void colisionar(Personaje personaje) {
-		personaje.danar(hurts);
-		personaje.sumarPuntos(puntajeObjeto);
+	public void colisionar() {
+		GameLluvia.actualizarPuntaje(puntajeObjeto);
+		GameLluvia.actualizarVida(damage);
+		GameLluvia.actualizarEstadoHerido(true);
+		sonidoObjeto.play();
 	}
-	
-	
-	
-	
 }
