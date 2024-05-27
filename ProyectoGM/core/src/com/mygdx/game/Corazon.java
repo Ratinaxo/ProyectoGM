@@ -6,7 +6,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 public class Corazon extends ObjetoCayendo{
-	private int puntajeObjeto;
 	private int heals;
 	
 	public Corazon(Texture corazonTextura, Sound sonidoCorazon) {
@@ -16,7 +15,6 @@ public class Corazon extends ObjetoCayendo{
 		this.hitboxObjeto.width = 0;
 		this.velY = MathUtils.random(50, 1000);
 		this.sonidoObjeto = sonidoCorazon;
-		this.puntajeObjeto = 5;
 		this.heals = 1;
 		
 	}
@@ -33,7 +31,6 @@ public class Corazon extends ObjetoCayendo{
 
 	
 	public void colisionar() {
-		GameLluvia.actualizarPuntaje(puntajeObjeto);
 		GameLluvia.actualizarVida(heals);
 		sonidoObjeto.play();
 		

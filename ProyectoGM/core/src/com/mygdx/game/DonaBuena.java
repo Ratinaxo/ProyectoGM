@@ -14,7 +14,7 @@ public class DonaBuena extends ObjetoCayendo{
 		this.hitboxObjeto.height = 0;
 		this.hitboxObjeto.width = 0;
 		this.velY = MathUtils.random(250, 650);
-		this.puntajeObjeto = 15;
+		this.puntajeObjeto = 5;
 	}
 
 	

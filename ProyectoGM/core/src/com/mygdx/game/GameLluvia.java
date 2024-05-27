@@ -4,7 +4,8 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -30,18 +31,27 @@ public class GameLluvia extends ApplicationAdapter {
 	public static int lifeMultiplier;
 	public static int damageMultiplier;
 	public static int combo;
+	private static int comboMax;
 	private static int idPersonaje;
-	
+	private boolean paused;
+	private boolean isGameOver;
+	private float time;
+	private int min;
+	private int sec;
 	public void create () {
 		scoreMultiplier = 1;
 		lifeMultiplier = 1;
 		puntos = 0;
-		vidas = 5;
+		vidas = 1;
 		herido = false;
+		paused = false;
 		personajes = new Array<Personaje>();
 		font = new BitmapFont(); // use libGDX's default Arial font
-		int combo = 1;
-		
+		combo = 1;
+		comboMax = 0;
+		time = 0;
+		min = 0;
+		sec = 0;
 		Array<ObjetoCayendo> objetos = new Array<ObjetoCayendo>();
 		
 		// load the sounds effect and the background "music"
@@ -107,10 +117,13 @@ public class GameLluvia extends ApplicationAdapter {
 		damageMultiplier = n;
 	}
 	public static void aumentarCombo() {
+		
 		combo += 1;
 	}
 	
 	public static void resetCombo() {
+		if(combo > comboMax)
+			comboMax = combo;
 		combo = 0;
 	}
 	
@@ -129,35 +142,81 @@ public class GameLluvia extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+		if (isGameOver) {
+		        // limpiar pantalla con color negro
+		        ScreenUtils.clear(Color.BLACK);
+		        
+		        batch.setProjectionMatrix(camera.combined);
+		        batch.begin();
+		        font.draw(batch, "Juego Terminado", 350, 440);
+		        font.draw(batch, "Tiempo de juego: " + min + ":" + time, 350, 260);
+		        font.draw(batch, "Puntos totales: " + puntos, 350, 240);
+		        font.draw(batch, "Combo más alto: " + comboMax, 350, 220);
+		        font.draw(batch, "Presiona R para reiniciar o Q para salir", 280, 120);
+		        
+		        batch.end();
+
+		        if (Gdx.input.isKeyJustPressed(Keys.R)) {
+		            resetGame();
+		        }
+
+		        if (Gdx.input.isKeyJustPressed(Keys.Q)) {
+		            Gdx.app.exit();
+		        }
+
+	            return;
+		    }
+		
+		if (vidas <= 0) {
+            // Establecer estado de Game Over
+            setGameOver();
+            return;
+        }
+		if (Gdx.input.isKeyJustPressed(Keys.P)) {
+            togglePause();
+        }
 		//limpia la pantalla con color azul cielo.
 		ScreenUtils.clear(Color.SKY);
 		
 		//actualizar matrices de la cámara
 		camera.update();
-		
 		//actualizar 
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		
-		//dibujar textos
-		font.draw(batch, "Puntos totales: " + puntos, 5, 475);
-		font.draw(batch, "COMBO X" + combo, 5, 455);
-		font.draw(batch, "Vidas : " + vidas, 720, 475);
-		
-		
-		if (!estadoHerido()) {
-			// movimiento del tarro desde teclado
-			personajeActual.actualizarMovimiento();
-			
-			// caida de los objetos
-			lanzador.actualizarMovimiento(personajeActual.getHitbox());	   
+		if (paused){
+            font.draw(batch, "Juego Pausado", 350, 240);
 		}
-
-		lanzador.actualizarDibujoLluvia(batch);
-		personajeActual.dibujar(batch);
+		else {
+			time += Gdx.graphics.getDeltaTime();
+			min += MathUtils.floorPositive(time/60);
+			//dibujar textos
+			font.draw(batch, "Tiempo" + min + ":" + time, 700, 430);
+			font.draw(batch, "Puntos totales: " + puntos, 5, 475);
+			font.draw(batch, "COMBO X" + combo, 5, 455);
+			font.draw(batch, "Vidas : " + vidas, 720, 475);
 		
+		
+			if (!estadoHerido()) {
+				// movimiento del tarro desde teclado
+				personajeActual.actualizarMovimiento();
+				
+				// caida de los objetos
+				lanzador.actualizarMovimiento(personajeActual.getHitbox());	   
+			}
+
+			lanzador.actualizarDibujoLluvia(batch);
+			personajeActual.dibujar(batch);
+
+			
+					
+		}
 		batch.end();
 		
+	}
+
+	private void togglePause() {
+		paused= !paused;
 	}
 	
 	@Override
@@ -168,5 +227,24 @@ public class GameLluvia extends ApplicationAdapter {
 		font.dispose();
 	}
 
+	private void resetGame() {
+        vidas = 5;
+        puntos = 0;
+        combo = 1;
+        scoreMultiplier = 1;
+        lifeMultiplier = 1;
+        damageMultiplier = 1;
+        herido = false;
+        idPersonaje = 0;
+        personajeActual = personajes.get(idPersonaje);
+        personajeActual.crear();
+        lanzador.crear();
+        paused = false;
+        isGameOver = false;
+        time = 0;
+    }
 	
+	public void setGameOver() {
+        isGameOver = true;
+    }
 }
