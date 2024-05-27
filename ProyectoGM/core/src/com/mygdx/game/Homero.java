@@ -78,11 +78,6 @@ public class Homero implements Personaje{
 		return hitbox;
 	}
 	
-	
-	public Texture getTexture() {
-		return texturePersonaje;
-	}
-	
 	public void destroy() {
 		hitbox = null;
 		texturePersonaje.dispose();

@@ -80,10 +80,6 @@ public class HomeroNino implements Personaje{
 	}
 	
 	
-	public Texture getTexture() {
-		return texture;
-	}
-	
 	public void destroy() {
 		hitbox = null;
 		texture.dispose();

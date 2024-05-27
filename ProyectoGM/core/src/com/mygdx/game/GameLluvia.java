@@ -4,7 +4,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -37,7 +36,6 @@ public class GameLluvia extends ApplicationAdapter {
 	private boolean isGameOver;
 	private float time;
 	private int min;
-	private int sec;
 	public void create () {
 		scoreMultiplier = 1;
 		lifeMultiplier = 1;
@@ -51,7 +49,6 @@ public class GameLluvia extends ApplicationAdapter {
 		comboMax = 0;
 		time = 0;
 		min = 0;
-		sec = 0;
 		Array<ObjetoCayendo> objetos = new Array<ObjetoCayendo>();
 		
 		// load the sounds effect and the background "music"
