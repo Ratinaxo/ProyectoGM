@@ -14,6 +14,10 @@ public abstract class ObjetoCayendo {
 		this.texturaObjeto = texturaObjeto;
 		this.sonidoObjeto = sonidoObjeto;
 	}
+	public ObjetoCayendo(Texture texturaObjeto) {
+		this.texturaObjeto = texturaObjeto;
+		this.sonidoObjeto = null;
+	}
 
 	public Rectangle getHitbox() {
 		return hitboxObjeto;
@@ -32,8 +36,8 @@ public abstract class ObjetoCayendo {
 	public abstract void colisionar();
 	
 	public void destroy() {
-		texturaObjeto.dispose();
-		sonidoObjeto.dispose();
+		if (!texturaObjeto.equals(null)) texturaObjeto.dispose();
+		if (!sonidoObjeto.equals(null)) sonidoObjeto.dispose();
 	}	
 
 	public int getVelY() {

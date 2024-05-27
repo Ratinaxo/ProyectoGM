@@ -26,28 +26,36 @@ public class GameLluvia extends ApplicationAdapter {
 	private static boolean herido;
 	private LanzadorObjetos lanzador;
 	private static Personaje personajeActual;
+	public static int scoreMultiplier;
+	public static int lifeMultiplier;
+	public static int damageMultiplier;
+	private static int idPersonaje;
 	
 	public void create () {
+		scoreMultiplier = 1;
+		lifeMultiplier = 1;
 		puntos = 0;
 		vidas = 5;
 		herido = false;
 		personajes = new Array<Personaje>();
 		font = new BitmapFont(); // use libGDX's default Arial font
+		
 		Array<ObjetoCayendo> objetos = new Array<ObjetoCayendo>();
-		// load the drop sound effect and the rain background "music"
-		DonaBuena donaBuena = new DonaBuena(new Texture(Gdx.files.internal("donutGood.png")), Gdx.audio.newSound(Gdx.files.internal("eructo.mp3")));
-		objetos.add(donaBuena);
-		DonaMala donaMala = new DonaMala(new Texture(Gdx.files.internal("donutBad.png")), Gdx.audio.newSound(Gdx.files.internal("dou.mp3")));
-		objetos.add(donaMala);
-		Corazon vida = new Corazon(new Texture(Gdx.files.internal("vida.png")), Gdx.audio.newSound(Gdx.files.internal("homeroWohoo.mp3")));
-		objetos.add(vida);
+		
+		// load the sounds effect and the background "music"
+		objetos.add(new DonaBuena(new Texture(Gdx.files.internal("donutGood.png")), Gdx.audio.newSound(Gdx.files.internal("eructo.mp3"))));
+		objetos.add(new DonaMala(new Texture(Gdx.files.internal("donutBad.png")), Gdx.audio.newSound(Gdx.files.internal("dou.mp3"))));
+		objetos.add(new Corazon(new Texture(Gdx.files.internal("vida.png")), Gdx.audio.newSound(Gdx.files.internal("homeroWohoo.mp3"))));
+		objetos.add(new PezRadioactivo(new Texture(Gdx.files.internal("pezRadioactivo.png"))));
 		
 		
 		Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
 		lanzador = new LanzadorObjetos(objetos, rainMusic);
 		personajes.add(new Homero(new Texture(Gdx.files.internal("homero.png"))));
 		personajes.add(new HomeroNino(new Texture(Gdx.files.internal("homeroNino.png"))));
-		personajeActual = personajes.get(MathUtils.random(0, 1));
+		personajes.add(new HomeroMuumuu(new Texture(Gdx.files.internal("homeroMuumuu.png"))));
+		idPersonaje = 0; //HomeroSimpson
+		personajeActual = personajes.get(idPersonaje);
 		// camera
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
@@ -65,11 +73,14 @@ public class GameLluvia extends ApplicationAdapter {
 	}
 	
 	public static void actualizarPuntaje(int pp) {
-		puntos += pp;
+		puntos += pp*scoreMultiplier;
 	}
 	
 	public static void actualizarVida(int vv) {
-		vidas += vv;
+		if (vv > 0) {
+			vidas += vv*lifeMultiplier;
+		}
+		else vidas += vv*damageMultiplier;
 	}
 	
 	public static void actualizarEstadoHerido (boolean estado) {
@@ -80,9 +91,27 @@ public class GameLluvia extends ApplicationAdapter {
 		return herido;
 	}
 	
+	public static void setScoreMultiplier(int n) {
+		scoreMultiplier = n;
+	}
+	
+	public static void setLifeMultiplier(int n) {
+		lifeMultiplier = n;
+	}
+	
+	public static void setDamageMultiplier(int n) {
+		damageMultiplier = n;
+	}
+	
 	public static void cambiarPersonaje() {
-		personajeActual = personajes.get(MathUtils.random(0,1));
+		float pos = personajeActual.getPosX();
+		while(idPersonaje == personajeActual.getIdPersonaje()) {
+			personajeActual = personajes.get(MathUtils.random(0,2));
+			
+		}
+		idPersonaje = personajeActual.getIdPersonaje();
 		personajeActual.crear();
+		personajeActual.setPosX(pos);
 		
 	}
 
@@ -125,4 +154,6 @@ public class GameLluvia extends ApplicationAdapter {
 		batch.dispose();
 		font.dispose();
 	}
+
+	
 }

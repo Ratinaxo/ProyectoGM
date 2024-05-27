@@ -13,16 +13,24 @@ public class Homero implements Personaje{
 	private Texture texturePersonaje;
 	private Rectangle hitbox;
 	
-	protected int velX;
+	private int damageMultiplier;
+	private int scoreMultiplier;
+	private int lifeMultiplier;
+	private int velX;
 	private int tiempoHeridoMax=50;
 	private int tiempoHerido;
+	private int id;
 	
 	
 	public Homero(Texture texture) {
 		this.texturePersonaje = texture;
-		this.velX = 400;
+		this.velX = 350;
 		this.tiempoHerido = tiempoHeridoMax;
 		this.hitbox = new Rectangle();
+		id = 0;
+		scoreMultiplier = 1;
+		lifeMultiplier = 1;
+		damageMultiplier = 1;
 		crear();
 		
 	}
@@ -32,6 +40,9 @@ public class Homero implements Personaje{
 		hitbox.y = 20;
 		hitbox.width = 64;
 		hitbox.height = 64;
+		GameLluvia.setScoreMultiplier(scoreMultiplier);
+		GameLluvia.setLifeMultiplier(lifeMultiplier);
+		GameLluvia.setDamageMultiplier(damageMultiplier);
 	}
 
 	   
@@ -84,5 +95,9 @@ public class Homero implements Personaje{
 	
 	public void setPosX(float posX) {
 		hitbox.x = posX;
+	}
+	
+	public int getIdPersonaje() {
+		return id;
 	}
 }

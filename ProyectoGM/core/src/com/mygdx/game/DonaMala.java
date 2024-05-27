@@ -15,7 +15,7 @@ public class DonaMala extends ObjetoCayendo{
 		this.hitboxObjeto.height = 0;
 		this.hitboxObjeto.width = 0;
 		this.velY = MathUtils.random(450, 800);
-		this.puntajeObjeto = -15;
+		this.puntajeObjeto = -10;
 		this.damage = -1;
 	}
 

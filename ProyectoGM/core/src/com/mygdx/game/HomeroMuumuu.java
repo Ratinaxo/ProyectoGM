@@ -8,9 +8,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class HomeroNino implements Personaje{
+public class HomeroMuumuu implements Personaje{
 
-	private Texture texture;
+	private Texture texturePersonaje;
 	private Rectangle hitbox;
 	
 	private int damageMultiplier;
@@ -21,25 +21,24 @@ public class HomeroNino implements Personaje{
 	private int tiempoHerido;
 	private int id;
 	
-	
-	public HomeroNino(Texture texture) {
-		this.texture = texture;
-		this.velX = 600;
+	public HomeroMuumuu(Texture texture) {
+		this.texturePersonaje = texture;
+		this.velX = 250;
 		this.tiempoHerido = tiempoHeridoMax;
 		this.hitbox = new Rectangle();
-		id = 1;
-		scoreMultiplier = 1;
-		lifeMultiplier = 2;
-		damageMultiplier = 2;
+		id = 2;
+		scoreMultiplier = 2;
+		lifeMultiplier = 0;
+		damageMultiplier = 1;
 		crear();
 		
 	}
 	
 	public void crear() {
-		hitbox.width = 64;
-		hitbox.height = 64;
 		hitbox.x = 800/2 - 64/2;
 		hitbox.y = 20;
+		hitbox.width = 100;
+		hitbox.height = 150;
 		GameLluvia.setScoreMultiplier(scoreMultiplier);
 		GameLluvia.setLifeMultiplier(lifeMultiplier);
 		GameLluvia.setDamageMultiplier(damageMultiplier);
@@ -60,13 +59,13 @@ public class HomeroNino implements Personaje{
 	
 	public void dibujar(SpriteBatch batch){
 		
-		
 		if (!GameLluvia.estadoHerido()) {
 			tiempoHerido = tiempoHeridoMax;
-			batch.draw(texture, hitbox.x, hitbox.y);
+			batch.draw(texturePersonaje, hitbox.x, hitbox.y);
 		}
 		else {
-			batch.draw(texture, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
+			
+			batch.draw(texturePersonaje, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
 			tiempoHerido--;
 				
 			if (tiempoHerido<=0)
@@ -81,12 +80,12 @@ public class HomeroNino implements Personaje{
 	
 	
 	public Texture getTexture() {
-		return texture;
+		return texturePersonaje;
 	}
 	
 	public void destroy() {
 		hitbox = null;
-		texture.dispose();
+		texturePersonaje.dispose();
 	}
 	
 	public float getPosX() {
@@ -96,9 +95,8 @@ public class HomeroNino implements Personaje{
 	public void setPosX(float posX) {
 		hitbox.x = posX;
 	}
-
+	
 	public int getIdPersonaje() {
 		return id;
 	}
-	
 }

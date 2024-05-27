@@ -16,14 +16,13 @@ public class LanzadorObjetos {
     private DonaBuena donaBuena;
     private DonaMala donaMala;
     private Corazon corazon;
-    private int cambio;
+    private PezRadioactivo pez;
     
 	public LanzadorObjetos(Array<ObjetoCayendo> objetos, Music mm) {
-		this.cambio = GameLluvia.getPuntos() ;
 		this.donaBuena = (DonaBuena)objetos.get(0);
 		this.donaMala = (DonaMala)objetos.get(1);
 		this.corazon = (Corazon)objetos.get(2);
-		
+		this.pez = (PezRadioactivo)objetos.get(3);
 		this.backgroundMusic = mm;
 		crear();
 	}
@@ -40,7 +39,7 @@ public class LanzadorObjetos {
 	private void crearObjeto() {
 		int randNum = MathUtils.random(1,100);
 		
-		if (randNum <= 65) { //60% dona normal
+		if (randNum <= 60) { //55% dona normal
 			DonaBuena oo = new DonaBuena(donaBuena.getTexture(), donaBuena.getSound());
 			Rectangle hitbox = oo.crearObjetoHitbox();
 			objetosPos.add(hitbox);
@@ -54,12 +53,18 @@ public class LanzadorObjetos {
 			objetosType.add(oo);
 
 		}
-		else{ // 5% Vida
+		else if (randNum <= 95){ // 10% Vida
 			Corazon oo = new Corazon(corazon.getTexture(), corazon.getSound());
 			Rectangle hitbox = oo.crearObjetoHitbox();
 			objetosPos.add(hitbox);
 			objetosType.add(oo);
 
+		}
+		else {
+			PezRadioactivo oo = new PezRadioactivo(pez.getTexture());
+			Rectangle hitbox = oo.crearObjetoHitbox();
+			objetosPos.add(hitbox);
+			objetosType.add(oo);
 		}
 
 		
@@ -68,7 +73,7 @@ public class LanzadorObjetos {
 	
 	public void actualizarMovimiento(Rectangle hitboxPersonaje) { 
 		// generar objetos en caida
-		if(TimeUtils.nanoTime() - lastDropTime > 100500000)
+		if(TimeUtils.nanoTime() - lastDropTime >  (Long.parseLong("100000000")))
 			crearObjeto();
 	  
 		// revisar si los objetos cayeron al suelo o chocaron contra el personaje
@@ -86,19 +91,10 @@ public class LanzadorObjetos {
 			
 			if(objetosPos.get(i).overlaps(hitboxPersonaje)) { //el objeto choca contra el personaje
 				//Acciones de la colision
-				cambio = GameLluvia.getPuntos();
 				objetosType.get(i).colisionar();
 				objetosType.removeIndex(i);
 				objetosPos.removeIndex(i);
-				
-				
 
-				
-				
-				if ((GameLluvia.getPuntos() % 50) == 0) {
-					System.out.println(GameLluvia.getPuntos() % 50);
-					GameLluvia.cambiarPersonaje();
-				}
 			}
 		}
 			

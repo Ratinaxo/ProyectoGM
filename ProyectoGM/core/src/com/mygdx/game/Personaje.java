@@ -20,7 +20,7 @@ public interface Personaje {
 	
 	public Texture getTexture();
 	
-	//public void cambiarPersonaje();
+	public int getIdPersonaje();
 	
 	public void destroy();
 	
