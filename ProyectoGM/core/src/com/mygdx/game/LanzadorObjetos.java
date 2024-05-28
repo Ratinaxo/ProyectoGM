@@ -1,7 +1,6 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -12,18 +11,16 @@ public class LanzadorObjetos {
 	private Array<ObjetoCayendo> objetosType;
 	private Array<Rectangle> objetosPos;
     private long lastDropTime;
-    private Music backgroundMusic;
     private DonaBuena donaBuena;
     private DonaMala donaMala;
     private Corazon corazon;
     private PezRadioactivo pez;
     
-	public LanzadorObjetos(Array<ObjetoCayendo> objetos, Music mm) {
+	public LanzadorObjetos(Array<ObjetoCayendo> objetos) {
 		this.donaBuena = (DonaBuena)objetos.get(0);
 		this.donaMala = (DonaMala)objetos.get(1);
 		this.corazon = (Corazon)objetos.get(2);
 		this.pez = (PezRadioactivo)objetos.get(3);
-		this.backgroundMusic = mm;
 		crear();
 	}
 	
@@ -31,9 +28,6 @@ public class LanzadorObjetos {
 		objetosPos = new Array<Rectangle>();
 		objetosType = new Array<ObjetoCayendo>();
 		crearObjeto();
-		//start the playback of the background music immediately
-		backgroundMusic.setLooping(true);
-		backgroundMusic.play();
 	}
 	
 	private void crearObjeto() {
@@ -107,6 +101,6 @@ public class LanzadorObjetos {
 	}
 	
 	public void destruir() {
-		backgroundMusic.dispose();
+		
 	}
 }

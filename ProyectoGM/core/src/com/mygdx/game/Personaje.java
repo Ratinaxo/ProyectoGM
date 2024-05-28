@@ -20,6 +20,4 @@ public interface Personaje {
 	public int getIdPersonaje();
 	
 	public void destroy();
-	
-	
 }

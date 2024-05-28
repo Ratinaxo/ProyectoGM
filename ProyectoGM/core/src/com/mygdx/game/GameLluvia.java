@@ -33,9 +33,12 @@ public class GameLluvia extends ApplicationAdapter {
 	private static int comboMax;
 	private static int idPersonaje;
 	private boolean paused;
-	private boolean isGameOver;
 	private float time;
 	private int min;
+	private Music backgroundMusic;
+	private Music pauseMenuMusic;
+	private Music gameoverMusic;
+	
 	public void create () {
 		scoreMultiplier = 1;
 		lifeMultiplier = 1;
@@ -57,9 +60,10 @@ public class GameLluvia extends ApplicationAdapter {
 		objetos.add(new Corazon(new Texture(Gdx.files.internal("vida.png")), Gdx.audio.newSound(Gdx.files.internal("homeroWohoo.mp3"))));
 		objetos.add(new PezRadioactivo(new Texture(Gdx.files.internal("pezRadioactivo.png"))));
 		
-		
-		Music rainMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
-		lanzador = new LanzadorObjetos(objetos, rainMusic);
+		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("simpsong.mp3"));
+		pauseMenuMusic = Gdx.audio.newMusic(Gdx.files.internal("homeroTarareando.mp3"));
+		gameoverMusic = Gdx.audio.newMusic(Gdx.files.internal("homeroLlorando.ogg"));
+		lanzador = new LanzadorObjetos(objetos);
 		personajes.add(new Homero(new Texture(Gdx.files.internal("homero.png"))));
 		personajes.add(new HomeroNino(new Texture(Gdx.files.internal("homeroNino.png"))));
 		personajes.add(new HomeroMuumuu(new Texture(Gdx.files.internal("homeroMuumuu.png"))));
@@ -74,6 +78,9 @@ public class GameLluvia extends ApplicationAdapter {
 		personajeActual.crear();
 		// creacion del lanzador de objetos
 		lanzador.crear();
+		backgroundMusic.setLooping(true);
+		gameoverMusic.setLooping(true);
+		backgroundMusic.play();
 		
 	}
 	
@@ -139,36 +146,11 @@ public class GameLluvia extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		if (isGameOver) {
-		        // limpiar pantalla con color negro
-		        ScreenUtils.clear(Color.BLACK);
-		        
-		        batch.setProjectionMatrix(camera.combined);
-		        batch.begin();
-		        font.draw(batch, "Juego Terminado", 350, 440);
-		        font.draw(batch, "Tiempo de juego: " + min + ":" + time, 350, 260);
-		        font.draw(batch, "Puntos totales: " + puntos, 350, 240);
-		        font.draw(batch, "Combo más alto: " + comboMax, 350, 220);
-		        font.draw(batch, "Presiona R para reiniciar o Q para salir", 280, 120);
-		        
-		        batch.end();
-
-		        if (Gdx.input.isKeyJustPressed(Keys.R)) {
-		            resetGame();
-		        }
-
-		        if (Gdx.input.isKeyJustPressed(Keys.Q)) {
-		            Gdx.app.exit();
-		        }
-
+		if (vidas <= 0) {
+		        // Terminar partida
+		        setGameOver();
 	            return;
 		    }
-		
-		if (vidas <= 0) {
-            // Establecer estado de Game Over
-            setGameOver();
-            return;
-        }
 		if (Gdx.input.isKeyJustPressed(Keys.P)) {
             togglePause();
         }
@@ -182,13 +164,16 @@ public class GameLluvia extends ApplicationAdapter {
 		batch.begin();
 		
 		if (paused){
+			
             font.draw(batch, "Juego Pausado", 350, 240);
 		}
 		else {
+			
+	        
 			time += Gdx.graphics.getDeltaTime();
-			min += MathUtils.floorPositive(time/60);
+			min += MathUtils.floor(time/60);
 			//dibujar textos
-			font.draw(batch, "Tiempo" + min + ":" + time, 700, 430);
+			font.draw(batch, "Tiempo " + min + ":" + MathUtils.floor(time), 700, 430);
 			font.draw(batch, "Puntos totales: " + puntos, 5, 475);
 			font.draw(batch, "COMBO X" + combo, 5, 455);
 			font.draw(batch, "Vidas : " + vidas, 720, 475);
@@ -213,12 +198,23 @@ public class GameLluvia extends ApplicationAdapter {
 	}
 
 	private void togglePause() {
-		paused= !paused;
+		paused = !paused;
+		
+        if (paused) {
+        	backgroundMusic.pause();
+        	pauseMenuMusic.play();
+        }
+        else {
+        	pauseMenuMusic.pause();
+        	backgroundMusic.play();
+        }
 	}
 	
 	@Override
 	public void dispose () {
 		personajeActual.destroy();
+		pauseMenuMusic.dispose();
+		backgroundMusic.pause();
 		lanzador.destruir();
 		batch.dispose();
 		font.dispose();
@@ -237,11 +233,36 @@ public class GameLluvia extends ApplicationAdapter {
         personajeActual.crear();
         lanzador.crear();
         paused = false;
-        isGameOver = false;
         time = 0;
+        
+    	backgroundMusic.play();
+    	gameoverMusic.stop();
     }
 	
 	public void setGameOver() {
-        isGameOver = true;
+		ScreenUtils.clear(Color.BLACK);
+        
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+        font.draw(batch, "Juego Terminado", 350, 440);
+        font.draw(batch, "Tiempo de juego: " + min + ":" + time, 350, 260);
+        font.draw(batch, "Puntos totales: " + puntos, 350, 240);
+        font.draw(batch, "Combo más alto: " + comboMax, 350, 220);
+        font.draw(batch, "Presiona R para reiniciar o Q para salir", 280, 120);
+        
+        batch.end();
+        
+        backgroundMusic.stop();
+        gameoverMusic.play();
+        
+
+        if (Gdx.input.isKeyJustPressed(Keys.R)) {
+            resetGame();
+        }
+
+        if (Gdx.input.isKeyJustPressed(Keys.Q)) {
+        	dispose();
+            Gdx.app.exit();
+        }
     }
 }

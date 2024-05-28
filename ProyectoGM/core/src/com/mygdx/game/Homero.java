@@ -21,7 +21,6 @@ public class Homero implements Personaje{
 	private int tiempoHerido;
 	private int id;
 	
-	
 	public Homero(Texture texture) {
 		this.texturePersonaje = texture;
 		this.velX = 350;

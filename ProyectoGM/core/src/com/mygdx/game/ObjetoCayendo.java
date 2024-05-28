@@ -48,5 +48,4 @@ public abstract class ObjetoCayendo {
 		hitboxObjeto.width = 0;
 		hitboxObjeto.height = 0;
 	}
-	
 }

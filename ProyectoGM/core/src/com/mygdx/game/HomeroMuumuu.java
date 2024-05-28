@@ -43,7 +43,6 @@ public class HomeroMuumuu implements Personaje{
 		GameLluvia.setLifeMultiplier(lifeMultiplier);
 		GameLluvia.setDamageMultiplier(damageMultiplier);
 	}
-
 	   
 	public void actualizarMovimiento() { 
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
