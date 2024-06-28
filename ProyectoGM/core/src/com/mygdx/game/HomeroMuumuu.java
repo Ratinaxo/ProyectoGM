@@ -8,9 +8,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class HomeroMuumuu implements Personaje{
+public class HomeroMuumuu implements PersonajeStrategy{
 
-	private Texture texturePersonaje;
+	private Texture textura;
 	private Rectangle hitbox;
 	
 	private int damageMultiplier;
@@ -21,8 +21,8 @@ public class HomeroMuumuu implements Personaje{
 	private int tiempoHerido;
 	private int id;
 	
-	public HomeroMuumuu(Texture texture) {
-		this.texturePersonaje = texture;
+	public HomeroMuumuu() {
+		this.textura = new Texture(Gdx.files.internal("homeroMuumuu.png"));
 		this.velX = 250;
 		this.tiempoHerido = tiempoHeridoMax;
 		this.hitbox = new Rectangle();
@@ -60,10 +60,10 @@ public class HomeroMuumuu implements Personaje{
 		
 		if (!GameLluvia.estadoHerido()) {
 			tiempoHerido = tiempoHeridoMax;
-			batch.draw(texturePersonaje, hitbox.x, hitbox.y);
+			batch.draw(textura, hitbox.x, hitbox.y);
 		}
 		else {
-			batch.draw(texturePersonaje, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
+			batch.draw(textura, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
 			tiempoHerido--;
 				
 			if (tiempoHerido<=0)
@@ -78,12 +78,12 @@ public class HomeroMuumuu implements Personaje{
 	
 	
 	public Texture getTexture() {
-		return texturePersonaje;
+		return textura;
 	}
 	
 	public void destroy() {
 		hitbox = null;
-		texturePersonaje.dispose();
+		textura.dispose();
 	}
 	
 	public float getPosX() {
@@ -96,5 +96,16 @@ public class HomeroMuumuu implements Personaje{
 	
 	public int getIdPersonaje() {
 		return id;
+	}
+
+	@Override
+	public void setHitboxX(float x) {
+		hitbox.x = x;
+		
+	}
+
+	@Override
+	public int getVelX() {
+		return velX;
 	}
 }

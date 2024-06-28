@@ -8,9 +8,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
-public class Homero implements Personaje{
+public class Homero implements PersonajeStrategy{
 
-	private Texture texturePersonaje;
+	private Texture textura;
 	private Rectangle hitbox;
 	
 	private int damageMultiplier;
@@ -21,8 +21,8 @@ public class Homero implements Personaje{
 	private int tiempoHerido;
 	private int id;
 	
-	public Homero(Texture texture) {
-		this.texturePersonaje = texture;
+	public Homero() {
+		this.textura = new Texture(Gdx.files.internal("homero.png"));
 		this.velX = 350;
 		this.tiempoHerido = tiempoHeridoMax;
 		this.hitbox = new Rectangle();
@@ -34,6 +34,7 @@ public class Homero implements Personaje{
 		
 	}
 	
+	@Override
 	public void crear() {
 		hitbox.x = 800/2 - 64/2;
 		hitbox.y = 20;
@@ -43,8 +44,8 @@ public class Homero implements Personaje{
 		GameLluvia.setLifeMultiplier(lifeMultiplier);
 		GameLluvia.setDamageMultiplier(damageMultiplier);
 	}
-
-	   
+	
+	@Override
 	public void actualizarMovimiento() { 
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
 			hitbox.x -= velX * Gdx.graphics.getDeltaTime();
@@ -57,14 +58,15 @@ public class Homero implements Personaje{
 		if(hitbox.x > 800 - hitbox.width) hitbox.x = 800 - hitbox.width;
 	}
 	
+	@Override
 	public void dibujar(SpriteBatch batch){
 		
 		if (!GameLluvia.estadoHerido()) {
 			tiempoHerido = tiempoHeridoMax;
-			batch.draw(texturePersonaje, hitbox.x, hitbox.y);
+			batch.draw(textura, hitbox.x, hitbox.y);
 		}
 		else {
-			batch.draw(texturePersonaje, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
+			batch.draw(textura, hitbox.x, hitbox.y+ MathUtils.random(-5,5));
 			tiempoHerido--;
 				
 			if (tiempoHerido<=0)
@@ -73,24 +75,44 @@ public class Homero implements Personaje{
 			}
 		}
 	
+	@Override
 	public Rectangle getHitbox(){
 		return hitbox;
 	}
 	
+	@Override
 	public void destroy() {
 		hitbox = null;
-		texturePersonaje.dispose();
+		textura.dispose();
 	}
 	
+	@Override
 	public float getPosX() {
 		return hitbox.getX();
 	}
 	
+	@Override
 	public void setPosX(float posX) {
 		hitbox.x = posX;
 	}
 	
 	public int getIdPersonaje() {
 		return id;
+	}
+
+	@Override
+	public void setHitboxX(float x) {
+		hitbox.x = x;
+		
+	}
+
+	@Override
+	public Texture getTexture() {
+		return textura;
+	}
+
+	@Override
+	public int getVelX() {
+		return velX;
 	}
 }

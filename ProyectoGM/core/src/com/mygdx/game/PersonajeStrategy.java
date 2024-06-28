@@ -1,9 +1,10 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
-public interface Personaje {
+public interface PersonajeStrategy {
 
 	public void crear();
 	
@@ -20,4 +21,10 @@ public interface Personaje {
 	public int getIdPersonaje();
 	
 	public void destroy();
+
+	public void setHitboxX(float x);
+
+	public Texture getTexture();
+
+	public int getVelX();
 }

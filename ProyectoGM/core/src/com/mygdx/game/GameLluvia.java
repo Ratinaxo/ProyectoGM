@@ -12,13 +12,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.graphics.Color;
 
 
 public class GameLluvia extends ApplicationAdapter {
-    private static Array<Personaje> personajes;
+    private static Jugador jugador;
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private BitmapFont font;
@@ -26,28 +25,32 @@ public class GameLluvia extends ApplicationAdapter {
     private static int vidas;
     private static boolean herido;
     private LanzadorObjetos lanzador;
-    private static Personaje personajeActual;
+    
     public static int scoreMultiplier;
     public static int lifeMultiplier;
     public static int damageMultiplier;
     public static int combo;
     private static int comboMax;
-    private static int idPersonaje;
+    
     private boolean paused;
     private float time;
     private int min;
     private Music backgroundMusic;
     private Music pauseMenuMusic;
     private Music gameoverMusic;
+    
+    private int deathTimeOut;
+    private int deathTimeOutMax;
 
     public void create () {
+    	deathTimeOutMax = 50;
         scoreMultiplier = 1;
         lifeMultiplier = 1;
         puntos = 0;
         vidas = 1;
         herido = false;
         paused = false;
-        personajes = new Array<Personaje>();
+        jugador = Jugador.getInstance();
         font = new BitmapFont(); // use libGDX's default Arial font
         combo = 1;
         comboMax = 0;
@@ -75,11 +78,7 @@ public class GameLluvia extends ApplicationAdapter {
         gameoverMusic = Gdx.audio.newMusic(Gdx.files.internal("homeroLlorando.ogg"));
         lanzador = new LanzadorObjetos(donaBuena, donaMala, corazon, pez);
 
-        personajes.add(new Homero(new Texture(Gdx.files.internal("homero.png"))));
-        personajes.add(new HomeroNino(new Texture(Gdx.files.internal("homeroNino.png"))));
-        personajes.add(new HomeroMuumuu(new Texture(Gdx.files.internal("homeroMuumuu.png"))));
-        idPersonaje = 0; // HomeroSimpson
-        personajeActual = personajes.get(idPersonaje);
+        
 
         // camera
         camera = new OrthographicCamera();
@@ -87,7 +86,7 @@ public class GameLluvia extends ApplicationAdapter {
         batch = new SpriteBatch();
 
         // creacion del personaje
-        personajeActual.crear();
+        jugador.initPlayer();
         // creacion del lanzador de objetos
         lanzador.crear();
         backgroundMusic.setLooping(true);
@@ -140,7 +139,7 @@ public class GameLluvia extends ApplicationAdapter {
         combo = 0;
     }
 
-    public static void cambiarPersonaje() {
+    /*public static void cambiarPersonaje() {
         float pos = personajeActual.getPosX();
         while(idPersonaje == personajeActual.getIdPersonaje()) {
             personajeActual = personajes.get(MathUtils.random(0,2));
@@ -149,67 +148,71 @@ public class GameLluvia extends ApplicationAdapter {
         idPersonaje = personajeActual.getIdPersonaje();
         personajeActual.crear();
         personajeActual.setPosX(pos);
-    }
+    }*/
 
     @Override
     public void render () {
-        if (vidas <= 0) {
-            // Terminar partida
-            setGameOver();
-            return;
-        }
-        if (Gdx.input.isKeyJustPressed(Keys.P)) {
-            togglePause();
-        }
-        //limpia la pantalla con color azul cielo.
-        ScreenUtils.clear(Color.SKY);
+    	if (jugador.getVidas() <= 0) {
+    	        System.out.println("Player life 0");
+    	        setGameOver();
+    	        return;
+    	    }
+    	if (!paused) {
+    		
+    		//limpia la pantalla con color azul cielo.
+            ScreenUtils.clear(Color.SKY);
 
-        //actualizar matrices de la cámara
-        camera.update();
-        //actualizar 
-        batch.setProjectionMatrix(camera.combined);
-        batch.begin();
-
-        if (paused) {
-            font.draw(batch, "Juego Pausado", 350, 240);
-        } else {
-            time += Gdx.graphics.getDeltaTime();
+            //actualizar matrices de la cámara
+            camera.update();
+            //actualizar 
+            batch.setProjectionMatrix(camera.combined);
+            batch.begin();
+            
+            
+            handleLogic();
+            
+            batch.end();
+    	}
+    	else if (paused) {
+    		if (Gdx.input.isKeyJustPressed(Keys.P)) {
+    			resume();
+    		}
+    	}
+    }
+    
+    private void handleInput() {
+    	if (Gdx.input.isKeyPressed(Keys.LEFT)) {
+    		jugador.moveLeft();
+	    }
+	    if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
+	        jugador.moveRight();
+	    }
+        if (Gdx.input.isKeyJustPressed(Keys.P)) 
+			pause();
+    }
+    
+    private void handleLogic() {
+    	
+        if (!jugador.isHerido()) {
+        	time += Gdx.graphics.getDeltaTime();
             min += MathUtils.floor(time / 60);
+            deathTimeOut = deathTimeOutMax; 
             // dibujar textos
-            font.draw(batch, "Tiempo " + min + ":" + MathUtils.floor(time), 700, 430);
+        	font.draw(batch, "Tiempo " + min + ":" + MathUtils.floor(time), 700, 430);
             font.draw(batch, "Puntos totales: " + puntos, 5, 475);
             font.draw(batch, "COMBO X" + combo, 5, 455);
             font.draw(batch, "Vidas : " + vidas, 720, 475);
-
-            if (!estadoHerido()) {
-                // movimiento del tarro desde teclado
-                personajeActual.actualizarMovimiento();
-
-                // caida de los objetos
-                lanzador.actualizarMovimiento(personajeActual.getHitbox());
-            }
-
-            lanzador.actualizarDibujoLluvia(batch);
-            personajeActual.dibujar(batch);
+            handleInput();
+            lanzador.actualizarMovimiento(jugador.getHitbox());
         }
-        batch.end();
-    }
-
-    private void togglePause() {
-        paused = !paused;
-
-        if (paused) {
-            backgroundMusic.pause();
-            pauseMenuMusic.play();
-        } else {
-            pauseMenuMusic.pause();
-            backgroundMusic.play();
-        }
+        
+        lanzador.actualizarDibujoLluvia(batch);
+        jugador.draw(batch);
     }
 
     @Override
     public void dispose() {
-        personajeActual.destroy();
+        jugador.destroy();
         pauseMenuMusic.dispose();
         backgroundMusic.pause();
         lanzador.destruir();
@@ -225,9 +228,7 @@ public class GameLluvia extends ApplicationAdapter {
         lifeMultiplier = 1;
         damageMultiplier = 1;
         herido = false;
-        idPersonaje = 0;
-        personajeActual = personajes.get(idPersonaje);
-        personajeActual.crear();
+        jugador.reset();
         lanzador.crear();
         paused = false;
         time = 0;
@@ -259,6 +260,25 @@ public class GameLluvia extends ApplicationAdapter {
         if (Gdx.input.isKeyJustPressed(Keys.Q)) {
             dispose();
             Gdx.app.exit();
+        }
+    }
+    
+    @Override
+    public void pause() {
+        if (!paused) {  // Only pause if not already paused
+            backgroundMusic.pause();
+            pauseMenuMusic.play();;
+            font.draw(batch, "Juego Pausado", 350, 240);
+            paused = true;
+        }
+    }
+
+    @Override
+    public void resume() {
+        if (paused) {  // Only resume if paused
+            pauseMenuMusic.stop();
+            backgroundMusic.play();
+            paused = false;
         }
     }
 }
