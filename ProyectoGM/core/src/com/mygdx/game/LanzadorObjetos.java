@@ -34,14 +34,17 @@ public class LanzadorObjetos {
         int randNum = MathUtils.random(1,100);
 
         ObjetoCayendo objeto;
-        if (randNum <= 60){ //55% dona normal
-            objeto = DonaBuena.crearDonaBuena(donaBuena.getTexture(), donaBuena.getSound());
-        } else if (randNum <= 90){ // 30% dona dañina
-            objeto = DonaMala.crearDonaMala(donaMala.getTexture(), donaMala.getSound());
-        } else if (randNum <= 95){ // 10% Vida
-            objeto = Corazon.crearCorazon(corazon.getTexture(), corazon.getSound());
-        } else {
-            objeto = PezRadioactivo.crearPezRadioactivo(pez.getTexture());
+        if (randNum <= 60) { // 55% dona normal
+            objeto = crearDonaBuena();
+        }
+        else if (randNum <= 90) { // 30% dona dañina
+            objeto = crearDonaMala();
+        }
+        else if (randNum <= 95) { // 10% vida
+            objeto = crearCorazon();
+        }
+        else {
+            objeto = crearPezRadioactivo();
         }
 
         Rectangle hitbox = objeto.crearObjetoHitbox();
@@ -51,11 +54,27 @@ public class LanzadorObjetos {
         lastDropTime = TimeUtils.nanoTime();
     }
 
+    private DonaBuena crearDonaBuena() {
+        return new DonaBuena(donaBuena.getTexture(), donaBuena.getSound());
+    }
+
+    private DonaMala crearDonaMala() {
+        return new DonaMala(donaMala.getTexture(), donaMala.getSound());
+    }
+
+    private Corazon crearCorazon() {
+        return new Corazon(corazon.getTexture(), corazon.getSound());
+    }
+
+    private PezRadioactivo crearPezRadioactivo() {
+        return new PezRadioactivo(pez.getTexture());
+    }
+
     public void actualizarMovimiento(Rectangle hitboxPersonaje) {
         // generar objetos en caida
-        if (TimeUtils.nanoTime() - lastDropTime > Long.parseLong("100000000"))
+        if (TimeUtils.nanoTime() - lastDropTime > 100000000)
             crearObjeto();
-        
+
         // revisar si los objetos cayeron al suelo o chocaron contra el personaje
         for (int i = 0; i < objetosPos.size; i++) {
             objetosPos.get(i).y -= objetosType.get(i).getVelY() * Gdx.graphics.getDeltaTime();
@@ -77,12 +96,14 @@ public class LanzadorObjetos {
     }
 
     public void actualizarDibujoLluvia(SpriteBatch batch) {
-        for (int i=0; i < objetosPos.size; i++ ) {
+        for (int i = 0; i < objetosPos.size; i++) {
             batch.draw(objetosType.get(i).getTexture(), objetosPos.get(i).x, objetosPos.get(i).y);
         }
     }
 
     public void destruir() {
-        
+        for (ObjetoCayendo objeto : objetosType) {
+            objeto.destroy();
+        }
     }
 }
