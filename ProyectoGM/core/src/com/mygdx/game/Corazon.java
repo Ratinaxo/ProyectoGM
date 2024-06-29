@@ -30,8 +30,8 @@ public class Corazon extends ObjetoCayendo{
         return hitboxObjeto;
     }
 
-    public void colisionar() {
-        GameLluvia.actualizarVida(heals);
+    public void colisionar(Jugador jugador) {
+        jugador.actualizarVidas(heals);
         sonidoObjeto.play();
     }
 }

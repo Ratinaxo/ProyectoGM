@@ -29,8 +29,8 @@ public class DonaBuena extends ObjetoCayendo{
         return hitboxObjeto;
     }
 
-    public void colisionar() {
-        GameLluvia.actualizarPuntaje(puntajeObjeto);
+    public void colisionar(Jugador jugador) {
+        jugador.actualizarPuntaje(puntajeObjeto);
         GameLluvia.aumentarCombo();
         sonidoObjeto.play();
         eliminar();

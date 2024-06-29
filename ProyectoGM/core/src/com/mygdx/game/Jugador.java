@@ -2,7 +2,6 @@ package com.mygdx.game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -11,18 +10,23 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 public class Jugador {
+	
 	private static Jugador _pinstance;
 	private PersonajeStrategy personaje;
 	private List<PersonajeStrategy> poolPersonajes;
+	private int idPersonaje;
+	
+	
 	private int lifeMultiplier;
 	private int damageMultiplier;
+	private int scoreMultiplier;
+	
 	private float posX;
 	private int velX;
 	private int vidas;
-	private int points;
+	private int puntaje;
 	private boolean herido;
 	private Rectangle hitbox;
-
 	private int tiempoHeridoMax=50;
 	private int tiempoHerido;
 	
@@ -32,7 +36,7 @@ public class Jugador {
 		damageMultiplier = 1;
 		posX = -1;
 		vidas = 5;
-		points = 0;
+		puntaje = 0;
 		herido = false;
 		hitbox = null;
 		generatePool();
@@ -53,6 +57,7 @@ public class Jugador {
 		personaje.setHitboxX(hitbox.x);
 		
 	}
+	
 	public void moveRight() {
 		System.out.println("Player Moving right");
 		hitbox.x += velX * Gdx.graphics.getDeltaTime();
@@ -63,7 +68,7 @@ public class Jugador {
 	
 	public void dibujarConTiempoHerido(SpriteBatch batch){
 		
-		if (!GameLluvia.estadoHerido()) {
+		if (!herido) {
 			tiempoHerido = tiempoHeridoMax;
 			batch.draw(personaje.getTexture(), hitbox.x, hitbox.y);
 		}
@@ -72,10 +77,11 @@ public class Jugador {
 			tiempoHerido--;
 				
 			if (tiempoHerido<=0)
-				GameLluvia.actualizarEstadoHerido(false);
+				herido = false;
 				
 			}
 		}
+	
 	private void generatePool() {
 		poolPersonajes.add(new Homero());
 		poolPersonajes.add(new HomeroNino());
@@ -87,24 +93,36 @@ public class Jugador {
 	}
 	
 	public void initPlayer() {
-		personaje = poolPersonajes.get(0);
+		idPersonaje = 0;
+		personaje = poolPersonajes.get(idPersonaje);
 		personaje.crear();
 		hitbox = personaje.getHitbox();
 		velX = personaje.getVelX();
+		
+		scoreMultiplier = personaje.getPuntajeMultiplier();
+		lifeMultiplier = personaje.getLifeMultiplier();
+		damageMultiplier = personaje.getDamageMultiplier();
 	}
 	
 	public Texture getTexture() {
 		return personaje.getTexture();
 	}
 	
-	public void cambiarPersonje() {
-		Random rand = new Random();
-		PersonajeStrategy nPersonaje = poolPersonajes.get(rand.nextInt(poolPersonajes.size()));
+	public void cambiarPersonajeRandom() {
+		int nid = idPersonaje;
+		while (nid == idPersonaje) {
+			nid = MathUtils.random(0, poolPersonajes.size()-1);
+		}
+		
 		posX = personaje.getPosX();
 		personaje.destroy();
-		personaje = nPersonaje;
-		hitbox.x = posX;
+		personaje = poolPersonajes.get(nid);
+		personaje.crear();
+		personaje.setPosX(posX);
+		
+		hitbox = personaje.getHitbox();
 		velX = personaje.getVelX();
+		idPersonaje = personaje.getId();
 		
 	}
 	
@@ -126,7 +144,7 @@ public class Jugador {
 	    posX = -1;
 	    velX = 0;
 	    vidas = 5;
-	    points = 0;
+	    puntaje = 0;
 	    herido = false;
 	    tiempoHeridoMax = 50;
 	    tiempoHerido = tiempoHeridoMax;
@@ -140,7 +158,30 @@ public class Jugador {
 	    velX = personaje.getVelX();
 	}
 	
+	public void actualizarVidas(int vv) {
+		if (vv > 0) {
+			vidas += vv*lifeMultiplier;
+		}
+		else
+			vidas += vv*damageMultiplier;
+			herido = true;
+	}
+	
 	public void destroy() {
 		
 	}
+
+	public void actualizarPuntaje(int pp) {
+        puntaje += pp*scoreMultiplier*GameLluvia.combo;
+    }
+
+	public void actualizarEstadoHerido(boolean estado) {
+		herido = estado;
+		
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+	
 }

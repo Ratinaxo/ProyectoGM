@@ -15,8 +15,10 @@ public class LanzadorObjetos {
     private DonaMala donaMala;
     private Corazon corazon;
     private PezRadioactivo pez;
-
+    private Jugador jugador;
+    
     public LanzadorObjetos(DonaBuena donaBuena, DonaMala donaMala, Corazon corazon, PezRadioactivo pez) {
+    	jugador = Jugador.getInstance();
         this.donaBuena = donaBuena;
         this.donaMala = donaMala;
         this.corazon = corazon;
@@ -88,7 +90,7 @@ public class LanzadorObjetos {
 
             if (objetosPos.get(i).overlaps(hitboxPersonaje)) { // el objeto choca contra el personaje
                 // Acciones de la colision
-                objetosType.get(i).colisionar();
+                objetosType.get(i).colisionar(jugador);
                 objetosType.removeIndex(i);
                 objetosPos.removeIndex(i);
             }

@@ -25,8 +25,8 @@ public class PezRadioactivo extends ObjetoCayendo{
         return hitboxObjeto;
     }
 
-    public void colisionar() {
-        //GameLluvia.cambiarPersonaje();
+    public void colisionar(Jugador jugador) {
+        jugador.cambiarPersonajeRandom();
         eliminar();
     }
 }

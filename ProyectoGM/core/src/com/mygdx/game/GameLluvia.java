@@ -17,18 +17,14 @@ import com.badlogic.gdx.graphics.Color;
 
 
 public class GameLluvia extends ApplicationAdapter {
-    private static Jugador jugador;
+    
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private BitmapFont font;
-    private static int puntos;
-    private static int vidas;
-    private static boolean herido;
+    
+    private static Jugador jugador;
     private LanzadorObjetos lanzador;
     
-    public static int scoreMultiplier;
-    public static int lifeMultiplier;
-    public static int damageMultiplier;
     public static int combo;
     private static int comboMax;
     
@@ -39,16 +35,8 @@ public class GameLluvia extends ApplicationAdapter {
     private Music pauseMenuMusic;
     private Music gameoverMusic;
     
-    private int deathTimeOut;
-    private int deathTimeOutMax;
 
     public void create () {
-    	deathTimeOutMax = 50;
-        scoreMultiplier = 1;
-        lifeMultiplier = 1;
-        puntos = 0;
-        vidas = 1;
-        herido = false;
         paused = false;
         jugador = Jugador.getInstance();
         font = new BitmapFont(); // use libGDX's default Arial font
@@ -93,42 +81,7 @@ public class GameLluvia extends ApplicationAdapter {
         gameoverMusic.setLooping(true);
         backgroundMusic.play();
     }
-
-    public static int getPuntos() {
-        return puntos;
-    }
-
-    public static void actualizarPuntaje(int pp) {
-        if (combo != 0) puntos += pp*scoreMultiplier*combo;
-        else puntos += pp*scoreMultiplier;
-    }
-
-    public static void actualizarVida(int vv) {
-        if (vv > 0) {
-            vidas += vv*lifeMultiplier;
-        }
-        else vidas += vv*damageMultiplier;
-    }
-
-    public static void actualizarEstadoHerido (boolean estado) {
-        herido = estado;
-    }
-
-    public static boolean estadoHerido() {
-        return herido;
-    }
-
-    public static void setScoreMultiplier(int n) {
-        scoreMultiplier = n;
-    }
-
-    public static void setLifeMultiplier(int n) {
-        lifeMultiplier = n;
-    }
-
-    public static void setDamageMultiplier(int n) {
-        damageMultiplier = n;
-    }
+    
     public static void aumentarCombo() {
         combo += 1;
     }
@@ -138,17 +91,6 @@ public class GameLluvia extends ApplicationAdapter {
             comboMax = combo;
         combo = 0;
     }
-
-    /*public static void cambiarPersonaje() {
-        float pos = personajeActual.getPosX();
-        while(idPersonaje == personajeActual.getIdPersonaje()) {
-            personajeActual = personajes.get(MathUtils.random(0,2));
-
-        }
-        idPersonaje = personajeActual.getIdPersonaje();
-        personajeActual.crear();
-        personajeActual.setPosX(pos);
-    }*/
 
     @Override
     public void render () {
@@ -192,22 +134,29 @@ public class GameLluvia extends ApplicationAdapter {
     }
     
     private void handleLogic() {
-    	
-        if (!jugador.isHerido()) {
-        	time += Gdx.graphics.getDeltaTime();
-            min += MathUtils.floor(time / 60);
-            deathTimeOut = deathTimeOutMax; 
-            // dibujar textos
-        	font.draw(batch, "Tiempo " + min + ":" + MathUtils.floor(time), 700, 430);
-            font.draw(batch, "Puntos totales: " + puntos, 5, 475);
-            font.draw(batch, "COMBO X" + combo, 5, 455);
-            font.draw(batch, "Vidas : " + vidas, 720, 475);
-            handleInput();
-            lanzador.actualizarMovimiento(jugador.getHitbox());
-        }
-        
+    	System.out.println(jugador.getVidas());
+    	if (jugador.getVidas() <= 0) {
+    		setGameOver();
+    	}
+    	time += Gdx.graphics.getDeltaTime();
+    	min += MathUtils.floor(time / 60);
+        // dibujar textos
+        generateFont();
+        handleInput();
+        lanzador.actualizarMovimiento(jugador.getHitbox());
         lanzador.actualizarDibujoLluvia(batch);
         jugador.draw(batch);
+    }
+    
+    private void generateFont() {
+    	font.draw(batch, "Tiempo " + min + ":" + MathUtils.floor(time), 700, 430);
+        font.draw(batch, "Puntos totales: " + jugador.getPuntaje(), 5, 475);
+        font.draw(batch, "COMBO X" + combo, 5, 455);
+        font.draw(batch, "Vidas : " + jugador.getVidas(), 720, 475);
+    }
+    
+    public static void cambiarPersonaje() {
+    	jugador.cambiarPersonajeRandom();
     }
 
     @Override
@@ -221,13 +170,7 @@ public class GameLluvia extends ApplicationAdapter {
     }
 
     private void resetGame() {
-        vidas = 5;
-        puntos = 0;
         combo = 1;
-        scoreMultiplier = 1;
-        lifeMultiplier = 1;
-        damageMultiplier = 1;
-        herido = false;
         jugador.reset();
         lanzador.crear();
         paused = false;
@@ -244,7 +187,7 @@ public class GameLluvia extends ApplicationAdapter {
         batch.begin();
         font.draw(batch, "Juego Terminado", 350, 440);
         font.draw(batch, "Tiempo de juego: " + min + ":" + time, 350, 260);
-        font.draw(batch, "Puntos totales: " + puntos, 350, 240);
+        font.draw(batch, "Puntos totales: " + jugador.getPuntaje(), 350, 240);
         font.draw(batch, "Combo más alto: " + comboMax, 350, 220);
         font.draw(batch, "Presiona R para reiniciar o Q para salir", 280, 120);
 
