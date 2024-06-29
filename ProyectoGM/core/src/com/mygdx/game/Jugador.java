@@ -66,7 +66,7 @@ public class Jugador {
 		personaje.setHitboxX(hitbox.x);
 	}
 	
-	public void dibujarConTiempoHerido(SpriteBatch batch){
+	public void draw(SpriteBatch batch){
 		
 		if (!herido) {
 			tiempoHerido = tiempoHeridoMax;
@@ -125,10 +125,7 @@ public class Jugador {
 		idPersonaje = personaje.getId();
 		
 	}
-	
-	public void draw(SpriteBatch batch) {
-		batch.draw(personaje.getTexture(), hitbox.x, hitbox.y);
-	}
+
 	
 	public Rectangle getHitbox() {
 		return hitbox;

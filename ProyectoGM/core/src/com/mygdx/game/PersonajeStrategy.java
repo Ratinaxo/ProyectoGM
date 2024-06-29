@@ -7,7 +7,6 @@ public interface PersonajeStrategy {
 
 	public void crear();
 	
-	
 	public float getPosX();
 	
 	public void setPosX(float posX);
@@ -28,6 +27,5 @@ public interface PersonajeStrategy {
 
 	public int getDamageMultiplier();
 
-
-	int getId();
+	public int getId();
 }
