@@ -9,12 +9,12 @@ public abstract class ObjetoCayendo {
     protected Texture texturaObjeto;
     protected Sound sonidoObjeto;
     protected int velY;
-    protected Jugador jugador;
+    protected JugadorSingleton jugador;
     
     public ObjetoCayendo(Texture texturaObjeto, Sound sonidoObjeto) {
         this.texturaObjeto = texturaObjeto;
         this.sonidoObjeto = sonidoObjeto;
-        jugador = Jugador.getInstance();
+        jugador = JugadorSingleton.getInstance();
     }
 
     public ObjetoCayendo(Texture texturaObjeto) {
@@ -55,5 +55,5 @@ public abstract class ObjetoCayendo {
         hitboxObjeto.width = 0;
         hitboxObjeto.height = 0;
     }
-    public abstract void colisionar(Jugador jugador);
+    public abstract void colisionar(JugadorSingleton jugador);
 }

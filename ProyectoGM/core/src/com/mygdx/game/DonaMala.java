@@ -31,7 +31,7 @@ public class DonaMala extends ObjetoCayendo{
         return hitboxObjeto;
     }
 
-    public void colisionar(Jugador jugador) {
+    public void colisionar(JugadorSingleton jugador) {
     	jugador.actualizarVidas(damage);
     	jugador.actualizarPuntaje(puntajeObjeto);
     	jugador.actualizarEstadoHerido(true);

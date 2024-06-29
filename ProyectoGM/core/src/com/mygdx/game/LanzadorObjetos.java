@@ -15,10 +15,10 @@ public class LanzadorObjetos {
     private DonaMala donaMala;
     private Corazon corazon;
     private PezRadioactivo pez;
-    private Jugador jugador;
+    private JugadorSingleton jugador;
     
     public LanzadorObjetos(DonaBuena donaBuena, DonaMala donaMala, Corazon corazon, PezRadioactivo pez) {
-    	jugador = Jugador.getInstance();
+    	jugador = JugadorSingleton.getInstance();
         this.donaBuena = donaBuena;
         this.donaMala = donaMala;
         this.corazon = corazon;

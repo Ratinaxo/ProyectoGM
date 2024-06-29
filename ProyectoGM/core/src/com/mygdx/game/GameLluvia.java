@@ -22,7 +22,7 @@ public class GameLluvia extends ApplicationAdapter {
     private SpriteBatch batch;
     private BitmapFont font;
     
-    private static Jugador jugador;
+    private static JugadorSingleton jugador;
     private LanzadorObjetos lanzador;
     
     public static int combo;
@@ -38,7 +38,7 @@ public class GameLluvia extends ApplicationAdapter {
 
     public void create () {
         paused = false;
-        jugador = Jugador.getInstance();
+        jugador = JugadorSingleton.getInstance();
         font = new BitmapFont(); // use libGDX's default Arial font
         combo = 1;
         comboMax = 0;

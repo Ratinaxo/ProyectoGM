@@ -9,9 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
-public class Jugador {
+public class JugadorSingleton {
 	
-	private static Jugador _pinstance;
+	private static JugadorSingleton _pinstance;
 	private PersonajeStrategy personaje;
 	private List<PersonajeStrategy> poolPersonajes;
 	private int idPersonaje;
@@ -30,7 +30,7 @@ public class Jugador {
 	private int tiempoHeridoMax=50;
 	private int tiempoHerido;
 	
-	private Jugador(){
+	private JugadorSingleton(){
 		poolPersonajes = new ArrayList<>();
 		lifeMultiplier = 1;
 		damageMultiplier = 1;
@@ -42,9 +42,9 @@ public class Jugador {
 		generatePool();
 	}
 	
-	public static Jugador getInstance() {
+	public static JugadorSingleton getInstance() {
 		if (_pinstance == null) {
-			_pinstance = new Jugador();
+			_pinstance = new JugadorSingleton();
 		}
 		return _pinstance;
 	}

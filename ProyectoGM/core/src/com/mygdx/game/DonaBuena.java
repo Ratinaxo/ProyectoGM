@@ -29,7 +29,7 @@ public class DonaBuena extends ObjetoCayendo{
         return hitboxObjeto;
     }
 
-    public void colisionar(Jugador jugador) {
+    public void colisionar(JugadorSingleton jugador) {
         jugador.actualizarPuntaje(puntajeObjeto);
         GameLluvia.aumentarCombo();
         sonidoObjeto.play();
